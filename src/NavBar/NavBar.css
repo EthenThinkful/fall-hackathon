@@ -1,20 +1,29 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: green;
+    background-color: #d9d9d9;
+    padding: 1rem 0;
 }
 
-.header-content {
-    display: flex;
+.input {
+  width: 25rem;
+  height: 2rem;
+  padding-left: 1rem;
 }
 
-.header {
-    display: block;
+.link {
+  text-decoration: none; /* Add underline */
+  color: black; /* Set text color to black */
+  transition: color 0.3s ease;
 }
 
 nav {
     display: none;
+}
+
+.menu {
+  display: none;
 }
 
 @media screen and (max-width: 576px) {
@@ -58,6 +67,10 @@ nav {
     font-size: 1.2rem;
     padding: 10px 20px;
     text-decoration: none;
+  }
+
+  .menu {
+    display: block;
   }
   
   /* end mobile design */

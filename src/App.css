@@ -6,8 +6,14 @@
 
 body {
   margin: 0;
+  padding: 0;
   text-align: center;
   font-family: 'Inter', sans-serif;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {

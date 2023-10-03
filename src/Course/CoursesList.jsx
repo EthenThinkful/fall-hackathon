@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react'
+import NavBar from '../NavBar/NavBar'
 
-function CoursesList () {
-
+function CoursesList() {
+  return (
+    <>
+    <NavBar />
+    <div>CoursesList</div>
+    </>
+  )
 }
 
-export default CoursesList;
+export default CoursesList

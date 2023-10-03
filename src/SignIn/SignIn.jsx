@@ -9,10 +9,7 @@ function SignIn() {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-
         navigate('./dashboard');
-
-
     };
 
     return (
@@ -26,7 +23,7 @@ function SignIn() {
                         <h2 href="/dashboard">Sign In</h2>
                         <p>or <a href="#" className="custom-link">Create an Account</a></p></div>
                     <form onSubmit={handleSubmit}>
-                        <div className="input">
+                        <div className="sign-in-input">
                             {/* <label htmlFor="email">Email:</label> */}
                             <input
                                 type="email"
@@ -36,7 +33,7 @@ function SignIn() {
                                 style={{ textAlign: 'left' }}
                             />
                         </div>
-                        <div className="input">
+                        <div className="sign-in-input">
                             {/* <label htmlFor="password">Password:</label> */}
                             <input
                                 type="password"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function DropdownMenu() {
+function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -12,6 +12,8 @@ function DropdownMenu() {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="dropdown" onBlur={closeDropdown}>
       <button className="dropdown-button" onClick={toggleDropdown}>
         Dropdown
@@ -24,7 +26,8 @@ function DropdownMenu() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
-export default DropdownMenu;
+export default Dropdown;

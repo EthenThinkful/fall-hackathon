@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react'
+import NavBar from '../NavBar/NavBar'
 
-function UserProfile () {
-
+function UserProfile() {
+  return (
+    <>
+    <NavBar />
+    <div>UserProfile</div>
+    </>
+  )
 }
 
-export default UserProfile;
+export default UserProfile

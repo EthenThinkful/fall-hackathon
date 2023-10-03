@@ -1,11 +1,13 @@
 import React from "react";
+import NavBar from "../NavBar/NavBar";
 
-function Dashboard () {
-return (
-    <div>
-        <h1>This is the Dashboard</h1>
-    </div>
-)
+function Dashboard() {
+    return (
+        <>
+            <NavBar />
+            <h1>This is the Dashboard</h1>
+        </>
+    )
 
 }
 
