@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+}
+
+.email {
+  /* padding: 0.5rem 6rem; */
+  height: 2rem;
+  width: 20rem;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.password {
+  height: 2rem;
+  width: 20rem;
+  padding-left: 2rem;
+}
+
+.sign-in-btns {
+  width: 35px;
+  height: 35px;
+  margin: 2rem 1rem;
+  padding: 0rem;
+  border-radius: 50%;
+}
+
+.sign-in-btns-container {
+  margin: 2rem 0;
+}
+
+.submit-btn {
+  padding: 0.5rem 4rem;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.sign-in-container {
+  background-color: #d9d9d9;
+  height: 20rem;
+  width: 20rem;
+  padding: 5rem;
+}
+
+.custom-link {
+  text-decoration: underline; /* Add underline */
+  color: black; /* Set text color to black */
+  transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+  color: darkgray;
+  /* You can also add other hover effects */
+}
+
+h2 {
+  margin-bottom: 0rem;
+}
+
+p {
+  margin-top: 0.5rem;
+}

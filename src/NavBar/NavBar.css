@@ -1,0 +1,65 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+}
+
+.header-content {
+    display: flex;
+}
+
+.header {
+    display: block;
+}
+
+nav {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    /* mobile design */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  button {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .bm-burger-button {
+    display: none; /* Hide the default burger button */
+  }
+  
+  .bm-menu {
+    background-color: #333;
+  }
+  
+  .bm-menu a {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* end mobile design */
+
+}
