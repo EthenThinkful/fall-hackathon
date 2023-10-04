@@ -9,17 +9,27 @@ import { useState } from 'react';
 import Search from './Search/Search';
 import CoursesList from './Course/CoursesList';
 import UserProfile from './UserProfile/UserProfile';
+import {runPromt} from './OpenAi/OpenAi';
+
+
 
 function App() {
+
   const [searchResults, setSearchResults] = useState('');
   const [toBeSearched, setToBeSearched] = useState('');
+
+  const handleSend = async () => {
+    const res = await runPromt();
+    console.log(res);
+  }
+  
   return (
     <>
     <NavBar searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched}/>
       <Routes>
         <Route path="/" element={<SignIn />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/search" element={<Search searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched}/>} />
+        <Route path="/dashboard" element={<Dashboard handleSend={handleSend}/>} />
         <Route path="/course" element={<CoursesList />} />
         <Route path="/profile" element={<UserProfile />} />
       </Routes>
