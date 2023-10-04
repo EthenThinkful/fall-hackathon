@@ -5,10 +5,8 @@ import { UilBars } from '@iconscout/react-unicons';
 import { useNavigate, Link } from "react-router-dom";
 import DropdownMenu from '../Search/Search.jsx';
 
-export default function NavBar() {
+export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [searchResults, setSearchResults] = useState(''); // keep track of user search text 
-    
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
@@ -26,6 +24,7 @@ export default function NavBar() {
     // Submit Handler
     const handleSubmit = (e) => {
         e.preventDefault();
+        setToBeSearched(searchResults);
         navigate('../search');
     };
 
@@ -41,7 +40,17 @@ export default function NavBar() {
             <div className="header">
                 <Link to={'/'} className='link'><h1 style={{ margin: 0 }}>Skillverse</h1></Link>
                 <div >Courses</div>
-                <form onSubmit={handleSubmit} ><input onChange={handleChange}type="search" name="search" id="search" placeholder="Search for a course" className='input' value={searchResults} /></form>
+                <form onSubmit={handleSubmit} >
+                    <input 
+                    onChange={handleChange}
+                    type="search" 
+                    name="search" 
+                    id="search" 
+                    placeholder="Search for a course" 
+                    className='input' value={searchResults} />
+                    <button type='submit'>Submit</button>
+                    {/* Need a small submit button in the input tag */}
+                </form>
                 <div >My Courses</div>
                 <Link to={'/profile'} className='link'><div>Click me to go to your profile</div></Link>
             </div>
