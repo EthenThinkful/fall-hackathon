@@ -12,6 +12,7 @@ import UserProfile from './UserProfile/UserProfile';
 function App() {
   return (
     <>
+    <NavBar/>
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />

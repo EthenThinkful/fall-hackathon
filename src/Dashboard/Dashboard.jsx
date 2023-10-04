@@ -4,7 +4,7 @@ import NavBar from "../NavBar/NavBar";
 function Dashboard() {
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
             <h1>This is the Dashboard</h1>
         </>
     )

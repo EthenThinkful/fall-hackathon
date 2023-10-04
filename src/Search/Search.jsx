@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import NavBar from '../NavBar/NavBar';
+import CoursesList from '../Course/CoursesList';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
+//import data here
 
-function Search() {
+
+function Search({searchResults, setSearchResults}) {
   const [isOpen, setIsOpen] = useState(false);
+
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -20,11 +24,16 @@ function Search() {
     navigate('../course');
 };
 
+const handleSearch = () => {
+
+}
+
   return (
     <>
-    <NavBar />
+    {/* <NavBar searchResults={searchResults} setSearchResults={setSearchResults}/><button onClick={handleSearch}>Search</button> */}
     <div>
       <h1>Search Page</h1>
+      <div>{searchResults}</div>
       <div className="course-container">
       <button className='course-box' onClick={handleSubmit}>
         Click here to take yourself to the page for this course
