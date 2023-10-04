@@ -4,7 +4,7 @@ import NavBar from '../NavBar/NavBar'
 function CoursesList() {
   return (
     <>
-    <NavBar />
+    {/* <NavBar /> */}
     <div>CoursesList</div>
     </>
   )

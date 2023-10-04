@@ -5,6 +5,7 @@ import SignIn from "./SignIn/SignIn";
 import NavBar from './NavBar/NavBar';
 import DropdownMenu from './Search/Search';
 import Dashboard from './Dashboard/Dashboard';
+import { useState } from 'react';
 import Search from './Search/Search';
 import CoursesList from './Course/CoursesList';
 import UserProfile from './UserProfile/UserProfile';
@@ -13,6 +14,10 @@ import {runPromt} from './OpenAi/OpenAi';
 
 
 function App() {
+
+  const [searchResults, setSearchResults] = useState('');
+  const [toBeSearched, setToBeSearched] = useState('');
+
   const handleSend = async () => {
     const res = await runPromt();
     console.log(res);
@@ -20,10 +25,11 @@ function App() {
   
   return (
     <>
+    <NavBar searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched}/>
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="/search" element={<Search searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched}/>} />
         <Route path="/dashboard" element={<Dashboard handleSend={handleSend}/>} />
-        <Route path="/search" element={<Search />} />
         <Route path="/course" element={<CoursesList />} />
         <Route path="/profile" element={<UserProfile />} />
       </Routes>

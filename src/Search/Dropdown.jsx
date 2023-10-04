@@ -13,7 +13,7 @@ function Dropdown() {
 
   return (
     <>
-    <NavBar />
+    {/* <NavBar /> */}
     <div className="dropdown" onBlur={closeDropdown}>
       <button className="dropdown-button" onClick={toggleDropdown}>
         Dropdown
