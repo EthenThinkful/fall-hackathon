@@ -8,13 +8,21 @@ import Dashboard from './Dashboard/Dashboard';
 import Search from './Search/Search';
 import CoursesList from './Course/CoursesList';
 import UserProfile from './UserProfile/UserProfile';
+import {runPromt} from './OpenAi/OpenAi';
+
+
 
 function App() {
+  const handleSend = async () => {
+    const res = await runPromt();
+    console.log(res);
+  }
+  
   return (
     <>
       <Routes>
         <Route path="/" element={<SignIn />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard handleSend={handleSend}/>} />
         <Route path="/search" element={<Search />} />
         <Route path="/course" element={<CoursesList />} />
         <Route path="/profile" element={<UserProfile />} />
