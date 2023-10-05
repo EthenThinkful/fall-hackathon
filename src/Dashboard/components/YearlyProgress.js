@@ -1,7 +1,6 @@
 // YearlyProgress.js
 import React from "react";
 import { Chart } from "react-google-charts";
-import "./DashComp.css";
 
 export const data = [
   ["Category", "Hours"],

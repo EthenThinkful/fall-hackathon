@@ -1,5 +1,4 @@
 import React from "react";
-import "./DashComp.css";
 
 export const MyBadges = ({ className }) => {
   return (

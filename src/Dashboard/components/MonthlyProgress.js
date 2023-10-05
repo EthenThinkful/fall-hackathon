@@ -1,5 +1,4 @@
 import React from "react";
-import "./DashComp.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 
