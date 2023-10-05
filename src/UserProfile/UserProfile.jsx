@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./UserProfile.css";
 import { useNavigate } from "react-router-dom";
+import userPfp from "../Image/user-pfp.png";
 
 // defines the user profile of the application
 
@@ -21,15 +22,16 @@ function UserProfile() {
   return (
     <>
       <NavBar />
-      <div>
+      <div className="main-container">
         <div className="profile-header">
           <h1>My Profile</h1>
         </div>
         <div className="name-section">
+          {/* <img src={userHeader} alt="User Header Image" className="name-pfp-container"/> */}
           <div className="name-pfp-container">
             {/* pfp img */}
             <img
-              src="profile-picture.png"
+              src={userPfp}
               alt="User Profile Picture"
               className="profile-picture"
             />
@@ -52,15 +54,21 @@ function UserProfile() {
           <h3>Completed Courses</h3>
           <div className="completed-courses-container">
             {/* will link to courses page */}
-            <button className="course-box" onClick={handleSubmit}>
-              Click me to go to your courses
-            </button>
-            <button className="course-box" onClick={handleSubmit}>
-              Click me to go to your courses
-            </button>
-            <button className="course-box" onClick={handleSubmit}>
-              Click me to go to your courses
-            </button>
+            {/* style this */}
+            <div className="course-img-1">
+              <button className="course-box" onClick={handleSubmit}></button>
+              <p>Painting with Acrylic - 10 Lessons</p>
+            </div>
+            {/* style this */}
+            <div className="course-img-2">
+              <button className="course-box" onClick={handleSubmit}></button>
+              <p>Italian Appetizers - 12 Lesson</p>
+            </div>
+            {/* style this */}
+            <div className="course-img-3">
+              <button className="course-box" onClick={handleSubmit}></button>
+              <p>Watercolor Patterns - 6 Lessons</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,34 +1,55 @@
-.profile-header {
-  width: 317px;
-  height: 40px;
+.main-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: left; /* Align content to the left of the parent */
+  margin-left: 0rem;
+  margin-top: 2rem;
+  margin-right: 57.5rem;
+  margin-bottom: 0;
   font-family: Inter, sans-serif;
-  margin: 2rem 0rem 0rem 0rem;
- 
+}
+
+h1 {
+  justify-content: left;
+  width: 317px;
+  height: 40px;
 }
 
 .name-section {
   display: flex;
-  justify-content: left;
-  margin-left: 10rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1080px;
+  height: 180px;
+  /* margin-left: 10rem;
+  margin-right: 5rem;
   margin-bottom: 2rem;
+  padding: 0rem; */
 }
 
 .name-pfp-container {
-  background-color: #d9d9d9;
-  width: 1080px;
-  height: 180px;
+  background-image: url("../Image/user-header.jpg");
+  background-size: cover; /* Cover the container without stretching */
+  background-repeat: no-repeat;
+  /* background-color: #d9d9d9; */
   display: flex;
   align-items: center;
-  margin: 5rem 0rem 0rem 0rem;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 1080px;
+  height: 180px;
 }
 
 .profile-picture {
-  background-color: white;
-  width: 137px; /* Adjust the width as needed */
-  height: 137px; /* Adjust the height as needed */
+  width: 137px;
+  height: 137px;
   border-radius: 50%;
   margin: 20px 60px;
 }
@@ -36,12 +57,15 @@
 .user-info-container {
   display: flex;
   flex-direction: column;
-  padding: 0rem;
+  margin-right: 10rem;
   text-align: left;
 }
 
 .info-section {
-  margin: 0rem 10rem;
+  /* margin: 0rem 10rem; */
+  margin-top: 22px;
+  margin-right: 565px;
+  justify-items: left;
 }
 
 .info-field {
@@ -56,20 +80,54 @@
 
 h2 {
   margin: 46px 6px;
-}
-
-.course-box {
-    margin: 0rem 0.5rem;
+  font-size: 30px;
+  font-family: "Nobile", sans-serif;
 }
 
 .completed-courses-container {
   display: flex;
-  padding-left: 10rem;
-  margin: 2rem 0;
+  justify-content: left;
+  margin-right: 100px;
+}
+.course-box {
+  padding: 20px;
+  margin: 0 5px;
 }
 
+.course-img-1 > button {
+  background-image: url("../Image/painting-with-acrylics.jpg");
+  background-size: cover; /* Cover the container without stretching */
+  background-repeat: no-repeat;
+  border-color: lightgray;
+}
+
+.course-img-2 > button {
+  background-image: url("../Image/italian-appetizers.jpg");
+  background-size: cover; /* Cover the container without stretching */
+  background-repeat: no-repeat;
+  border-color: lightgray;
+}
+
+.course-img-3 > button {
+  background-image: url("../Image/watercolor-patterns.jpg");
+  background-size: cover; /* Cover the container without stretching */
+  background-repeat: no-repeat;
+  border-color: lightgray;
+}
+
+.course-img-1 > p,
+.course-img-2 > p,
+.course-img-3 > p {
+  font-size: 15px;
+}
 
 h3 {
   text-align: left;
-  padding-left: 10rem;
+  margin-left: 2rem;
+}
+
+p {
+  display: flex;
+  justify-content: left;
+  padding-left: 2rem;
 }
