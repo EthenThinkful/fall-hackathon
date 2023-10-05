@@ -1,13 +1,15 @@
 .carousel-image-container {
-  width: 375px;
-  height: 250px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  display: flex; /* Add this to center the image inside the container */
-  align-items: center; /* Add this to center the image vertically */
-  justify-content: center; /* Add this to center the image horizontally */
+  width: 100%;
+  height: 200px; /* You can adjust the height as needed */
+  overflow: hidden;
 }
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will crop the image as needed */
+}
+
 
 /* ImageCarousel.css */
 .carousel-root .carousel .slider-wrapper .slider .control-prev,

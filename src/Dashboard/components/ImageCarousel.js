@@ -8,8 +8,8 @@ function ImageCarousel() {
   const images = courses.map((course) => course.image);
 
   const renderImages = images.map((image, index) => (
-    <div key={index}>
-      <img src={image} alt={`Image ${index + 1}`} />
+    <div key={index} className="carousel-image-container">
+      <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
     </div>
   ));
 
@@ -19,9 +19,9 @@ function ImageCarousel() {
       showThumbs={false}
       showStatus={false}
       infiniteLoop={true}
-      autoPlay={false} // Set autoPlay to false
-      centerMode={true} // Enable center mode
-      centerSlidePercentage={33.33} // Display 3 images at a time
+      autoPlay={false}
+      centerMode={true}
+      centerSlidePercentage={33.33}
     >
       {renderImages}
     </Carousel>
