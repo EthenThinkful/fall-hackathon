@@ -21,7 +21,6 @@ function UserProfile() {
 
   return (
     <>
-      <NavBar />
       <div className="main-container">
         <div className="profile-header">
           <h1>My Profile</h1>
