@@ -6,28 +6,33 @@ import "./Dashboard.css";
 
 function Dashboard({ handleSend }) {
   return (
-    <div className="dashboard-container">
-      {/* <NavBar /> */}
-      <div className="dashboard-metrics">
-        <MonthlyProgress className="monthly-progress-instance" />
-        <YearlyProgress className="two-thousand-and-twenty-three-progress" />
-        <MyBadges className="my-badges-instance" />
+    <div className="body">
+      <div className="dashboard-metrics-container">
+        <MonthlyProgress className="monthly-progress" />
+        <YearlyProgress className="yearly-progress" />
+        <MyBadges className="my-badges" />
       </div>
-      <div className="dashboard-content">
-        <div className="overlap">
-          <div />
-          <h1>Welcome back Jane! Ready to learn?</h1>
+      <div className="dashboard-container">
+        <div className="dashboard-header">
+        <h1 className="welcome-message">Welcome back Jane! Ready to learn?</h1>
+        <div></div>
         </div>
-        <h3>Pick Up Where You Left Off</h3>
-        <h3>
-          Because You Liked
-          <span className="text-wrapper-13">Traditional Italian Cooking</span>
-        </h3>
-        <h3>Popular Right Now</h3>
-        <h3>Discover</h3>
+        <div className="dashboard-content">
+          <div className="overlap">
+            <div />
+          </div>
+          <h3>Pick Up Where You Left Off</h3>
+          <h3>
+            Because You Liked&nbsp;
+            <em>Traditional Italian Cooking</em>
+          </h3>
+          <h3>Popular Right Now</h3>
+          <h3>Discover</h3>
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default Dashboard;
