@@ -1,0 +1,28 @@
+
+.dashboard-container {
+  display: flex;
+  width: 100%;
+}
+
+
+.dashboard-metrics {
+  flex: 1; 
+  padding: 20px; 
+}
+
+.dashboard-content {
+  flex: 3;
+  padding: 20px; 
+}
+
+h2 {
+    text-align: left,
+}
+
+.body {
+    background-color: #fffcfa;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
