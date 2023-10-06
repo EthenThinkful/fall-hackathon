@@ -8,11 +8,11 @@ import "./DashComp.css"; // Import your CSS file
 function ImageCarousel() {
   const renderSlides = courses.map((course, index) => {
     // Replace spaces with hyphens in the course title
-    const courseTitleWithHyphens = course.title.replace(/\s+/g, "-").toLowerCase();
+    const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
 
     return (
       <Link
-        to={`/course/${courseTitleWithHyphens}`}
+        to={`/courses/${hyphenatedTitle}`}
         key={index}
         className="carousel-slide-link"
       >

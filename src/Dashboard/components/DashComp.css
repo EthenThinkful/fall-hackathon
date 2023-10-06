@@ -68,15 +68,21 @@
   padding: 8px; /* Add some padding to the title */
   margin: 0;
 }
-
-/* MonthlyProgress */
-
-/* Increase the height of the progress bar */
-.react-progress-bar {
-  height: 20px; /* Adjust the height as per your preference */
+/* MonthlyProgress.css */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Optionally, you can also style the completed part of the progress bar */
-.react-progress-bar__completed {
-  background-color: #007bff; /* Change the color as desired */
+.progress-bar {
+  width: 90%;
+  margin: 10px 0; /* Adjust the margin as needed */
 }
+
+.progress-text {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+

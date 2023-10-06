@@ -1,5 +1,4 @@
 .body {
-  
   background-color: #fffdfa;
   display: flex;
   flex-direction: row;
@@ -7,15 +6,11 @@
 }
 
 .dashboard-metrics {
-  font-family: "Nobile";
   padding: 20px;
 }
 
 .dashboard-container {
-  font-weight:100;
-
-  font-family: "Nobile";
-  flex: 2; /* 2/3 of the screen width */
+  font-weight: 100;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -26,25 +21,22 @@
 }
 
 .dashboard-content {
-  
   text-align: center;
   margin-top: 20px; /* Adjust this margin as needed */
 }
 
 .dashboard-content h3 {
-  font-weight:100;
-
-  margin-top: 10px; /* Add margin between h3 headers */
+  font-weight: 100;
+  margin-top: 10px; 
 }
 
 .dashboard-metrics-container {
-  flex: 1; /* 1/3 of the screen width */
   padding: 20px; /* Adjust the padding as needed */
+  white-space: nowrap;
 }
 
 .welcome-message {
-  font-weight:100;
-
+  font-weight: 100;
   text-align: left;
   margin-top: 20px; /* Adjust the margin as needed */
   margin-bottom: 20px;
