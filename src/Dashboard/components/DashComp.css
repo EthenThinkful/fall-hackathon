@@ -1,10 +1,10 @@
 /* Formatting for metrics side of page */
 
 .metrics-heading {
-  font-size: 24px; 
-  font-weight: bold; 
-  text-align: left; 
-  color: #333; 
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
   margin-bottom: 1px;
 }
 
@@ -43,18 +43,18 @@
 
 .carousel-image-container {
   width: 100%;
-  height: 200px; 
+  height: 200px;
   overflow: hidden;
 }
 
 .carousel-root .carousel .slider-wrapper .slider {
-  display: flex; 
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
 }
 
 .carousel-slide {
   flex: 0 0 calc(33.33% - 10px);
-  margin-right: 10px; 
+  margin-right: 10px;
   position: relative;
 }
 
@@ -73,26 +73,38 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255); 
-  color: #000000; 
-  padding: 8px; 
+  background-color: rgba(255, 255, 255);
+  color: #000000;
+  padding: 8px;
   margin: 0;
 }
+
+.carousel-instructor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255);
+  color: #000000;
+  padding: 8px;
+  margin: 0;
+}
+
 /* MonthlyProgress.css */
 .progress-container {
   display: flex;
   flex-direction: column;
-  align-items:end;
+  align-items: end;
   text-align: center;
 }
 
 .progress-bar {
   width: 90%;
-  margin: 10px 0; 
+  margin: 10px 0;
 }
 
 .progress-text {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 /* YearlyProgress.js */
@@ -104,9 +116,9 @@ yearly-progress {
 }
 
 .chart-header {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .chart-container {
-  height: 400px; 
+  height: 400px;
 }
