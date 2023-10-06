@@ -3,10 +3,5 @@
   margin-right: 2.5rem;
   background-color: #D0ADDC;
   border: none;
-}
-
-.submit-btn:hover {
-  color: white;
-  background-color: #D0ADDC;
-  font-size: 20px;
+  cursor: pointer;
 }

@@ -27,7 +27,7 @@
   height: 64px;
 }
 
-h3 {
+.h3 {
   margin-bottom: 1rem;
   color: #fff!important;
   font-weight: normal; /* To make the text less bold */
@@ -48,9 +48,10 @@ h3 {
 .background-image {
   position: relative;
   width: 100%;
+  margin-bottom: 2rem;
   /* Prevent content from overflowing the container */
   overflow: hidden;
-  height: 665px;
+  height: 700px;
   /* Add the background image */
   background-image: url('https://s3-alpha-sig.figma.com/img/f687/ccdf/2e16530c580690b03b0e58b4012ea25f?Expires=1697414400&Signature=cXKWiKwGJQ08Hhb~OE0WDLJOFpDP4C0QWYy10FK7LVpKgzp~vgG35Ooefe5J7KVDiQwtdxteayN-ZyMOmbksIF3JVRLM0ngLRehnqcTh5EdLSqID47KhzdeN91XVQ5JOyJ07Lzs~pheypanCxwjjInps-aZelpTpv8OHRoFByz7WS61FIikt8r59VL-Q1DNV7aeTDVlDMJOi1I1M51jyYkQIB~Pjri4yYaiZmuDkmutKq4pIsh5NjBpvi1sGulnXuJ82Ywyh-Vi5~8m7ZtO7vU4-Kzc~wc~A75qubIPPZUzReO1R1ktvPU7hiYqawWl5IFhVSC-4nafs7K9rH0DXTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
   /* Center the background image */
@@ -59,6 +60,7 @@ h3 {
   background-size: cover;
   /* Prevent the background image from repeating */
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .background-image::before {
