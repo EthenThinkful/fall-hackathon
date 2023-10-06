@@ -19,6 +19,7 @@ function ImageCarousel() {
         <div className="carousel-slide">
           <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
           <p className="carousel-title">{course.title}</p>
+          {/*<p className="carousel-instructor">{course.instructor}</p>*/}
         </div>
       </Link>
     );
