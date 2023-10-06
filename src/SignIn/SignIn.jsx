@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // Defines the landing page of the application
 
-function SignIn() {
+function SignIn({state, setState}) {
 
     const navigate = useNavigate();
     const handleSubmit = (e) => {
@@ -14,9 +14,9 @@ function SignIn() {
 
     return (
         <>
-            <div style={{ textAlign: 'left', paddingLeft: '2rem' }}>
+            {/* <div style={{ textAlign: 'left', paddingLeft: '2rem' }}>
                 <h1>Skillverse</h1>
-            </div>
+            </div> */}
             <div className="parent">
                 <div className="sign-in-container">
                     <div style={{ textAlign: 'left', paddingBotton: '0rem', marginBottom: '3rem' }}>
@@ -45,7 +45,7 @@ function SignIn() {
                         </div>
                         <div className="sign-in-btns-container">
                             <div><button type="submit" className="submit-btn">Sign In</button></div>
-                            <button className="sign-in-btns">G</button>
+                            <button className="sign-in-btns"><i class="bi bi-github"></i></button>
                             <button className="sign-in-btns">Li</button>
                             <button className="sign-in-btns">F</button>
                         </div>

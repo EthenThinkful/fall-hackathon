@@ -36,7 +36,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 0rem;
 }
 
 .sign-in-container {
@@ -63,4 +63,8 @@ h2 {
 
 p {
   margin-top: 0.5rem;
+}
+
+sign-in-btns.img {
+  size: 10px;
 }
