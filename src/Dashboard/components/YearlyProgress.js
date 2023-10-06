@@ -1,14 +1,11 @@
 // YearlyProgress.js
 import React from "react";
 import { Chart } from "react-google-charts";
-import "./DashComp.css";
 
 export const data = [
   ["Category", "Hours"],
-  ["Cooking", 11],
-  ["Graphic Design", 2],
   ["Language", 15],
-  ["Photography", 22],
+  ["Cooking", 11],
   ["Art", 7],
 ];
 
@@ -16,6 +13,9 @@ export const options = {
   pieHole: 0.5,
   is3D: false,
   pieSliceText: "value", // Display the value (hours) on each slice
+  colors: ['#7869B9','violet','#D0ADDC','purple'],
+  legend: 'bottom',
+  alignment: 'start',
 };
 
 export const YearlyProgress = ({ className }) => {
@@ -25,7 +25,7 @@ export const YearlyProgress = ({ className }) => {
       <div className="chart-container">
         <Chart
           chartType="PieChart"
-          width="100%" // Set width to 100% to make it responsive
+          width="80%" // Set width to 100% to make it responsive
           height="400px" // You can adjust the height as needed
           data={data}
           options={options}
