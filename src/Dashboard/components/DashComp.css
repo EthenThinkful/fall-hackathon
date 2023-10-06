@@ -1,11 +1,11 @@
 /* Formatting for metrics side of page */
 
 .metrics-heading {
-  font-size: 24px; /* Adjust the font size as needed */
-  font-weight: bold; /* Add font-weight if desired */
-  text-align: left; /* Align to the left */
-  color: #333; /* Add your desired text color */
-  margin-bottom: 1px; /* Add margin if needed */
+  font-size: 24px; 
+  font-weight: bold; 
+  text-align: left; 
+  color: #333; 
+  margin-bottom: 1px;
 }
 
 /* ImageCarousel */
@@ -43,28 +43,28 @@
 
 .carousel-image-container {
   width: 100%;
-  height: 200px; /* You can adjust the height as needed */
+  height: 200px; 
   overflow: hidden;
 }
 
 .carousel-root .carousel .slider-wrapper .slider {
-  display: flex; /* Use flexbox for the slider container */
-  justify-content: space-between; /* Add space between slides */
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .carousel-slide {
-  flex: 0 0 calc(33.33% - 10px); /* Adjust the percentage width as needed */
-  margin-right: 10px; /* Add margin for gap between slides */
+  flex: 0 0 calc(33.33% - 10px);
+  margin-right: 10px; 
   position: relative;
 }
 
 .carousel-slide:last-child {
-  margin-right: 0; /* Remove margin for the last slide */
+  margin-right: 0;
 }
 
 .carousel-image {
   width: 100%;
-  height: 300px; /* You can adjust the height as needed */
+  height: 300px;
   object-fit: cover;
 }
 
@@ -73,9 +73,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255); /* Add a background color for better readability */
-  color: #000000; /* Text color for the title */
-  padding: 8px; /* Add some padding to the title */
+  background-color: rgba(255, 255, 255); 
+  color: #000000; 
+  padding: 8px; 
   margin: 0;
 }
 /* MonthlyProgress.css */
@@ -88,11 +88,11 @@
 
 .progress-bar {
   width: 90%;
-  margin: 10px 0; /* Adjust the margin as needed */
+  margin: 10px 0; 
 }
 
 .progress-text {
-  margin-top: 10px; /* Adjust the margin as needed */
+  margin-top: 10px; 
 }
 
 /* YearlyProgress.js */
@@ -104,9 +104,9 @@ yearly-progress {
 }
 
 .chart-header {
-  margin-bottom: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px; 
 }
 
 .chart-container {
-  height: 400px; /* Adjust the height as needed (e.g., 400px) */
+  height: 400px; 
 }

@@ -17,12 +17,12 @@
 }
 
 .dashboard-header {
-  margin-top: 20px; /* Adjust this margin as needed */
+  margin-top: 20px; 
 }
 
 .dashboard-content {
   text-align: center;
-  margin-top: 20px; /* Adjust this margin as needed */
+  margin-top: 20px; 
 }
 
 .dashboard-content h3 {
@@ -31,19 +31,19 @@
 }
 
 .dashboard-metrics-container {
-  padding: 20px; /* Adjust the padding as needed */
+  padding: 20px;
   white-space: nowrap;
 }
 
 .welcome-message {
   font-weight: 100;
   text-align: left;
-  margin-top: 20px; /* Adjust the margin as needed */
+  margin-top: 20px; 
   margin-bottom: 20px;
   white-space: nowrap;
 }
 @media (max-width: 1000px) {
   .welcome-message {
-    white-space: normal; /* Allow text to wrap when the screen width is 768px or smaller */
+    white-space: normal; 
   }
 }
