@@ -1,3 +1,13 @@
+/* Formatting for metrics side of page */
+
+.metrics-heading {
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Add font-weight if desired */
+  text-align: left; /* Align to the left */
+  color: #333; /* Add your desired text color */
+  margin-bottom: 1px; /* Add margin if needed */
+}
+
 /* ImageCarousel */
 .carousel-root .carousel .slider-wrapper .slider .control-prev,
 .carousel-root .carousel .slider-wrapper .slider .control-next {
@@ -72,7 +82,7 @@
 .progress-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:end;
   text-align: center;
 }
 
@@ -85,4 +95,18 @@
   margin-top: 10px; /* Adjust the margin as needed */
 }
 
+/* YearlyProgress.js */
+yearly-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.chart-header {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.chart-container {
+  height: 400px; /* Adjust the height as needed (e.g., 400px) */
+}

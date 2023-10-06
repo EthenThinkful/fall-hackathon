@@ -5,7 +5,7 @@ import "./DashComp.css";
 export const MonthlyProgress = ({ className }) => {
   return (
     <div className={className}>
-      <h2>Monthly Progress</h2>
+      <h2 className="metrics-heading">Monthly Progress</h2>
       <div className="progress-container">
         <p className="progress-text">35 Hours</p>
         <ProgressBar
