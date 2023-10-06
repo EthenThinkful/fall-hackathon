@@ -7,15 +7,20 @@ import DropdownMenu from './Search/Search';
 import Dashboard from './Dashboard/Dashboard';
 import { useState } from 'react';
 import Search from './Search/Search';
-import CoursesList from './Course/CoursesList';
+import CoursesList from './SingleCourse/SingleCourse';
 import UserProfile from './UserProfile/UserProfile';
 import { runPromt } from './OpenAi/OpenAi';
+import AllCourses from './AllCourses/AllCourses';
+import MyCourses from './MyCourses/MyCourses';
+import SingleCourse from './SingleCourse/SingleCourse';
+import LandingPage from './LandingPage/LandingPage';
 
 function App() {
 
   // Define state variables for the NavBar & Search
   const [searchResults, setSearchResults] = useState('');
   const [toBeSearched, setToBeSearched] = useState('');
+  const [quote, setQuote] = useState(false);
 
   // Define a custom function to handle sending the prompt to OpenAI
   const handleSend = async () => {
@@ -45,10 +50,12 @@ function App() {
 
   // Define a variable to store the route elements
   const element = useRoutes([
-    { path: "/", element: <SignIn /> },
+    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} /> },
     { path: "/search", element: <Search searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched} /> },
     { path: "/dashboard", element: <Dashboard handleSend={handleSend} /> },
-    { path: "/course", element: <CoursesList /> },
+    { path: "/allcourses", element: <AllCourses /> },
+    { path: "/mycourses", element: <MyCourses /> },
+    { path: "/course", element: <SingleCourse /> },
     { path: "/profile", element: <UserProfile /> },
   ]);
 

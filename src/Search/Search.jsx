@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from '../NavBar/NavBar';
-import CoursesList from '../Course/CoursesList';
+import CoursesList from '../SingleCourse/SingleCourse';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
 //import data here

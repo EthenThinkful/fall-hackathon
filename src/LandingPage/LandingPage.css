@@ -1,0 +1,127 @@
+/* .background-image {
+  background-position: center center; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%; */
+  /* top: 0; */
+  /* left: 0;  */
+/* } */ */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Space items vertically */
+    height: 100vh; /* Adjust the height of the parent div as needed */
+    background-color: #344D56!important;
+  }
+  
+  .logo-container {
+    align-self: flex-start; /* Align the logo to the top left */
+    margin: 1rem; /* Adjust the margin as needed */
+  }
+  
+  .skillverse-logo {
+    width: 247px;
+    height: 64px;
+  }
+  
+  h3 {
+    margin-bottom: 1rem;
+    color: #fff!important;
+    font-weight: normal; /* To make the text less bold */
+    font-size: 1.5em; /* To make the text a little bit bigger */
+  }
+  
+  .background-image-text-button {
+    position: relative;
+    width: 100%;
+    /* Prevent content from overflowing the container */
+    overflow: hidden;
+    height: (100vh - 6rem);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .background-image {
+    position: relative;
+    width: 100%;
+    /* Prevent content from overflowing the container */
+    overflow: hidden;
+    height: 665px;
+    /* Add the background image */
+    background-image: url('https://s3-alpha-sig.figma.com/img/f687/ccdf/2e16530c580690b03b0e58b4012ea25f?Expires=1697414400&Signature=cXKWiKwGJQ08Hhb~OE0WDLJOFpDP4C0QWYy10FK7LVpKgzp~vgG35Ooefe5J7KVDiQwtdxteayN-ZyMOmbksIF3JVRLM0ngLRehnqcTh5EdLSqID47KhzdeN91XVQ5JOyJ07Lzs~pheypanCxwjjInps-aZelpTpv8OHRoFByz7WS61FIikt8r59VL-Q1DNV7aeTDVlDMJOi1I1M51jyYkQIB~Pjri4yYaiZmuDkmutKq4pIsh5NjBpvi1sGulnXuJ82Ywyh-Vi5~8m7ZtO7vU4-Kzc~wc~A75qubIPPZUzReO1R1ktvPU7hiYqawWl5IFhVSC-4nafs7K9rH0DXTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    /* Center the background image */
+    background-position: 50% 50%;
+    /* Ensure the background image covers the container */
+    background-size: cover;
+    /* Prevent the background image from repeating */
+    background-repeat: no-repeat;
+  }
+  
+  .background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Set the overlay color with transparency */
+    background-color: rgba(211, 211, 211, 0.3); /* Light gray with 50% opacity */
+  }
+  
+  /* Style for the footer */
+  .footer {
+    background-color: #344D56;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    bottom: 0;
+    /* Ensure the footer remains at the bottom */
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    margin-top: 15rem;
+  }
+  
+  .text-overlay p {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  /* .action-button-overlay {
+    position: absolute;
+    top: 0;
+    font-size: 56px;
+  } */
+  
+  /* Style for the button */
+  .arrow-button {
+    color: #0d0101;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+  }
+  
+  /* Style for the arrow icon */
+  .arrow-button::after {
+    content: '\2192'; /* Unicode arrow right character */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }

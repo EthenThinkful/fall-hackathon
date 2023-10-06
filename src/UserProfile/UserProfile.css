@@ -29,7 +29,7 @@ h1 {
 }
 
 .name-pfp-container {
-  background-image: url("../Image/user-header.jpg");
+  background-image: url("../Images/user-header.jpg");
   background-size: cover; /* Cover the container without stretching */
   background-repeat: no-repeat;
   position: relative;
