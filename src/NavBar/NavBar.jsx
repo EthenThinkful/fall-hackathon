@@ -5,7 +5,7 @@ import { UilBars } from '@iconscout/react-unicons';
 import { useNavigate, Link } from "react-router-dom";
 import DropdownMenu from '../Search/Search.jsx';
 
-export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched }) {
+export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched, handleSend }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -25,6 +25,7 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
     const handleSubmit = (e) => {
         e.preventDefault();
         setToBeSearched(searchResults);
+        handleSend();
         navigate('../search');
     };
 
