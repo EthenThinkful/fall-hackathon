@@ -1,3 +1,25 @@
+.all-content {
+    margin: 2rem 22rem;
+}
+
+.cooking-title {
+    color: #000;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: .25rem;
+}
+
+.author-title {
+    color: #000;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 1rem;
+}
+
 /* top-section styling */
 .top-section {
     display: flex;
@@ -27,15 +49,20 @@
     margin: 0px;
 }
 
+.top-content {
+    display: flex;
+    flex-direction: row;
+}
+
 .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 5px;
 }
 
 .text {
     font-size: 12px;
-    margin-right: 10px;
 }
 
 .row button {
@@ -49,35 +76,51 @@
 
 .scroll-container {
     position: relative;
-    width: 350px; 
-    height: 350px; /* auto - Let the height adjust based on content */
-    overflow-y: scroll; /* Enable horizontal scrollbar */
-    overflow-x: hidden; /* Hide vertical scrollbar */
-    margin-left: 50px; /* Add margin for spacing */
+    width: 350px;
+    height: 350px; /* Add the desired height for the container */
+    overflow-y: scroll; /* Enable vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin-left: 1.5rem;
     margin-top: 100px;
     margin-right: 10px;
-    border: 2px solid #ccc; 
+    border: 2px solid #ccc;
     background-color: #344D56;
     color: white;
 }
 
-/* Hide the default scrollbar */
+.checkmark {
+    display: inline-block;
+    width: 10px;
+    height: 11px;
+    background-image: url('../Images/check-mark.png'); /* Replace with your checkmark image */
+    background-size: cover;
+    margin-right: 30px; /* Adjust spacing between checkmark and text */
+  }
+
+  /* ol li {
+     list-style-type: none; 
+    margin-bottom: 10px; 
+  } */
+
+  .li {
+    list-style-type: none; /* Remove default list style */
+    margin-bottom: 10px; /* Adjust spacing between list items */
+  }
+
+/* Adjust the scrollbar thumb height (may not work in all browsers) */
 .scroll-container::-webkit-scrollbar {
-    width: 10px; /* scrollbar */
-    margin-right: 10px;
-    background-color:#344D56; /* scrollbar track */
+    width: 12px;
 }
 
-/* Style the scrollbar thumb, the part that you can drag */
 .scroll-container::-webkit-scrollbar-thumb {
-    background-color: white; /* scrollbar thumb */
-    border-radius: 5px; 
+    background-color: white;
+    border-radius: 6px;
+    height: 50px; /* Adjust the height as needed */
 }
 
-/* On hover, style the scrollbar thumb */
 .scroll-container::-webkit-scrollbar-thumb:hover {
-    background-color: #B382DD; /* Change the color on hover */
-} 
+    background-color: #555;
+}
 
 .content {
     /* Set content dimensions and styling */
@@ -98,15 +141,17 @@
 /* bottom section styling */
 .bottom-section {
     display: flex;
-    width: 100%;
+    flex-direction: row;
+    /* width: 100%;
     justify-content: center;  
     text-align: left;
-    margin-left: 50px;
+    margin-left: 50px; */
 }
 
 .left-container {
     width: 100%; 
     margin-top: 30px;
+    justify-content: flex-start;
 }
 
 .navbar {
@@ -116,6 +161,7 @@
     padding-top: 5px;
     background-color: #344D56;
     color: white;
+    margin-top: 2rem;
 }
 
 .navbar ul {
@@ -136,11 +182,14 @@
 }
 
 .right-container {
-    width: 350px; 
+    display: flex;
+    justify-content: space-between;
+    /* width: 320px; */
+    height: 310px; 
+    flex-shrink: 0;
+    padding: 2rem;
     margin-left: 20px;
-    padding-left: 20px;
-    margin-top: 80px;
-    border: 2px solid #000;
+    margin-top: 0px;
     background-color: #344D56;
     color: white;
 }
@@ -158,6 +207,7 @@
     justify-content: center;
     text-align: left;
     margin-left: 50px;
+    margin-top: 5px;
 }
 
 #follow-button {
