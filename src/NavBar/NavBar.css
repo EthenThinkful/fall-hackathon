@@ -1,15 +1,22 @@
 .header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #d9d9d9;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #344D56;
+  color: #fff;
+  padding: 0rem 0;
 }
 
 .input {
   width: 25rem;
   height: 2rem;
-  padding-left: 1rem;
+  padding: 1rem 10px 1rem 2.5rem;
+  background-position: 10px center;
+  background-image: url('../Images/search.png');
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  border: none;
 }
 
 .link {
@@ -19,24 +26,31 @@
 }
 
 nav {
-    display: none;
+  display: none;
 }
 
 .menu {
   display: none;
 }
 
+.userPfp {
+  width: 65px;
+  height: 65px;
+  border-radius: 65px;
+  flex-shrink: 0;
+}
+
 @media screen and (max-width: 576px) {
-    .header {
-        display: none;
-    }
+  .header {
+    display: none;
+  }
 
-    nav {
-        display: block;
-    }
+  nav {
+    display: block;
+  }
 
-    /* mobile design */
-.navbar {
+  /* mobile design */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,24 +58,24 @@ nav {
     color: #fff;
     padding: 10px 20px;
   }
-  
+
   .logo {
     font-size: 1.5rem;
   }
-  
+
   button {
     color: #fff;
     font-size: 1.2rem;
   }
-  
+
   .bm-burger-button {
     display: none; /* Hide the default burger button */
   }
-  
+
   .bm-menu {
     background-color: #333;
   }
-  
+
   .bm-menu a {
     color: #fff;
     font-size: 1.2rem;
@@ -72,7 +86,6 @@ nav {
   .menu {
     display: block;
   }
-  
-  /* end mobile design */
 
+  /* end mobile design */
 }
