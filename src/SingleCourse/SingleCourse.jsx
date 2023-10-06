@@ -12,9 +12,13 @@ function SingleCourse() {
                     <p>Jamie's Kitchen</p>
                     <img src={require('../Images/kitchen.png')} />
                     <div className='row'>
-                        <p>24,000 Likes</p>
-                        <button id='LikeButton'>Like</button>
-                        <button id='ShareButton'>Share</button>
+                        <div className='text'>
+                            <p>24,000 Likes</p>
+                        </div>
+                        <div className='buttons'>
+                            <button id='LikeButton'>Like</button>
+                            <button id='ShareButton'>Share</button>
+                        </div>
                     </div>
                 </div>
                 <div className='scroll-container'>
@@ -58,12 +62,20 @@ function SingleCourse() {
                 </div>
                 <div className='right-container'>
                     <h1>Teacher</h1>
-                    <div className='title'>
-                        <img src={require("../Images/photo.jpg")} />
-                        <p>Jamie's Kitchen</p>
-                        <p>45K Likes</p>
-                        <button id='FollowButton'>Follow</button>
-                        <p>Chef Jamie's Kitchen, curated by the visionary Chef Jamie, is a culinary sanctuary in the heart of the city. With a passion </p>
+                    <div className='image-title'>
+                        <div className='image'>
+                            <img src={require("../Images/photo.jpg")} />
+                        </div>
+                        <div className='title'>
+                            <p>Jamie's Kitchen</p>
+                            <p>45K Likes</p>
+                    </div>
+                        <div className='follow-button'>
+                            <button id='FollowButton'>Follow</button>
+                        </div>
+                        <div>
+                            <p>Chef Jamie's Kitchen, curated by the visionary Chef Jamie, is a culinary sanctuary in the heart of the city. With a passion </p>
+                        </div>
                     </div>
                 </div>
             </div>

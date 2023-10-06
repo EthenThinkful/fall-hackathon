@@ -1,3 +1,4 @@
+/* top-section styling */
 .top-section {
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%); 
-}
+} 
 
 .top-section h1 {
     margin: 0px;
@@ -29,9 +30,10 @@
 .row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.row p {
+.text {
     font-size: 12px;
     margin-right: 10px;
 }
@@ -44,15 +46,6 @@
     color: black;
     width: 70px;
 }
-/* 
-#follow-button {
-    margin-left: 15px;
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: #B382DD;
-    color: black;
-    width: 70px;
-} */
 
 .scroll-container {
     position: relative;
@@ -84,7 +77,7 @@
 /* On hover, style the scrollbar thumb */
 .scroll-container::-webkit-scrollbar-thumb:hover {
     background-color: #B382DD; /* Change the color on hover */
-}
+} 
 
 .content {
     /* Set content dimensions and styling */
@@ -102,27 +95,27 @@
     margin-bottom: 10px;
 }
 
-
+/* bottom section styling */
 .bottom-section {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: center;  
     text-align: left;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
 .left-container {
-    position: relative;
     width: 100%; 
-    margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .navbar {
-    width: 600px;
+    width: 740px;
     height: 50px;
+    padding-left: 30px;
+    padding-top: 5px;
     background-color: #344D56;
     color: white;
-    margin: 20px;
 }
 
 .navbar ul {
@@ -135,38 +128,43 @@
     text-align: center;
     margin: 10px;
     margin-top: 20px;
-    margin-right: 30px; /* Add somme spacing between items */
+    margin-right: 60px; /* Add somme spacing between items */
 }
 
 .underline {
     text-decoration: underline;
 }
 
-.bottom-section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    text-align: left;
-    margin-left: 120px;
-}
-
-.left-container {
-    position: relative;
-    width: 570px; 
-    /* margin-left: 100px; */
-    margin-top: 100px;
-}
-
 .right-container {
-    position: relative;
     width: 350px; 
-    margin-right: 300px;
-    margin-top: 180px;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-top: 80px;
     border: 2px solid #000;
     background-color: #344D56;
     color: white;
 }
 
-/* .right-container {
-    margin: 10px;
-} */
+.image-title image {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.image-title title {
+    display: flex;
+    position:relative;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+#follow-button {
+    margin-left: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #B382DD;
+    color: black;
+    width: 70px;
+} 
