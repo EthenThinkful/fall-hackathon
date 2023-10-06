@@ -1,0 +1,172 @@
+.top-section {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.arrow {
+    /* color: #0d0101; */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+}
+
+.arrow::after {
+    content: '\2190'; /* Unicode arrow left character */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.top-section h1 {
+    margin: 0px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.row p {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.row button {
+    margin-left: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #B382DD;
+    color: black;
+    width: 70px;
+}
+/* 
+#follow-button {
+    margin-left: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #B382DD;
+    color: black;
+    width: 70px;
+} */
+
+.scroll-container {
+    position: relative;
+    width: 350px; 
+    height: 350px; /* auto - Let the height adjust based on content */
+    overflow-y: scroll; /* Enable horizontal scrollbar */
+    overflow-x: hidden; /* Hide vertical scrollbar */
+    margin-left: 50px; /* Add margin for spacing */
+    margin-top: 100px;
+    margin-right: 10px;
+    border: 2px solid #ccc; 
+    background-color: #344D56;
+    color: white;
+}
+
+/* Hide the default scrollbar */
+.scroll-container::-webkit-scrollbar {
+    width: 10px; /* scrollbar */
+    margin-right: 10px;
+    background-color:#344D56; /* scrollbar track */
+}
+
+/* Style the scrollbar thumb, the part that you can drag */
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: white; /* scrollbar thumb */
+    border-radius: 5px; 
+}
+
+/* On hover, style the scrollbar thumb */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #B382DD; /* Change the color on hover */
+}
+
+.content {
+    /* Set content dimensions and styling */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.content h4 {
+    margin-top: 0px;
+}
+
+.content li {
+    /* Set content dimensions and styling */
+    margin-bottom: 10px;
+}
+
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.left-container {
+    position: relative;
+    width: 100%; 
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.navbar {
+    width: 600px;
+    height: 50px;
+    background-color: #344D56;
+    color: white;
+    margin: 20px;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove the default bullet points */
+    padding: 0;
+}
+
+.navbar li {
+    display: inline; /* Display list items horizontally */
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    margin-right: 30px; /* Add somme spacing between items */
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+    margin-left: 120px;
+}
+
+.left-container {
+    position: relative;
+    width: 570px; 
+    /* margin-left: 100px; */
+    margin-top: 100px;
+}
+
+.right-container {
+    position: relative;
+    width: 350px; 
+    margin-right: 300px;
+    margin-top: 180px;
+    border: 2px solid #000;
+    background-color: #344D56;
+    color: white;
+}
+
+/* .right-container {
+    margin: 10px;
+} */

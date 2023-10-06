@@ -1,11 +1,11 @@
 import React from "react";
 import "./UserProfile.css";
 import { useNavigate } from "react-router-dom";
-import userPfp from "../Image/user-pfp.png";
-import italianPic from "../Image/italian-for-travelers.jpg";
-import toolsPic from "../Image/choosing-your-tools.jpg";
-import aiPic from "../Image/what-is-ai.jpg";
-import dots from "../Image/3-buttons.png";
+import userPfp from "../Images/user-pfp.png";
+import italianPic from "../Images/italian-for-travelers.jpg";
+import toolsPic from "../Images/choosing-your-tools.jpg";
+import aiPic from "../Images/what-is-ai.jpg";
+import dots from "../Images/3-buttons.png";
 
 // defines the user profile of the application
 
