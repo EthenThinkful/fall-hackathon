@@ -4,8 +4,8 @@ import ProgressBar from "@ramonak/react-progress-bar";
 
 export const MonthlyProgress = ({ className }) => {
   return (
-    <div>
-      <h2>Monthly Progress</h2>
+    <div className={className}>
+            <h2>Monthly Progress</h2>
       <ProgressBar completed={28} />
       <p>October Goal: 35 Hours</p>
     </div>

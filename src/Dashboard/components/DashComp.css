@@ -1,17 +1,4 @@
-.carousel-image-container {
-  width: 100%;
-  height: 200px; /* You can adjust the height as needed */
-  overflow: hidden;
-}
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* This will crop the image as needed */
-}
-
-
-/* ImageCarousel.css */
+/* ImageCarousel */
 .carousel-root .carousel .slider-wrapper .slider .control-prev,
 .carousel-root .carousel .slider-wrapper .slider .control-next {
   display: block;
@@ -42,4 +29,48 @@
 .carousel-root .carousel .slider-wrapper .slider .control-prev:hover,
 .carousel-root .carousel .slider-wrapper .slider .control-next:hover {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-image-container {
+  width: 100%;
+  height: 200px; /* You can adjust the height as needed */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: relative; /* To position the title relative to the image */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 200px; /* You can adjust the height as needed */
+  object-fit: cover;
+}
+
+.carousel-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Add a background color for better readability */
+  color: #fff; /* Text color for the title */
+  padding: 8px; /* Add some padding to the title */
+  margin: 0;
+}
+
+/* MonthlyProgress */
+
+/* Increase the height of the progress bar */
+.react-progress-bar {
+  height: 20px; /* Adjust the height as per your preference */
+}
+
+/* Optionally, you can also style the completed part of the progress bar */
+.react-progress-bar__completed {
+  background-color: #007bff; /* Change the color as desired */
 }

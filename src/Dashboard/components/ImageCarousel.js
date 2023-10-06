@@ -5,11 +5,12 @@ import { courses } from "./data"; // Import the courses data
 import "./DashComp.css"; // Import your CSS file
 
 function ImageCarousel() {
-  const images = courses.map((course) => course.image);
-
-  const renderImages = images.map((image, index) => (
-    <div key={index} className="carousel-image-container">
-      <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
+  const renderImages = courses.map((course, index) => (
+    <div key={index} className="carousel-slide">
+      <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
+      <p className="carousel-title">{course.title}</p>
+      
+      
     </div>
   ));
 
