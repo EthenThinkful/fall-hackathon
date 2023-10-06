@@ -21,7 +21,7 @@ function SignIn({state, setState}) {
             {/* <div style={{ textAlign: 'left', paddingLeft: '2rem' }}>
                 <h1>Skillverse</h1>
             </div> */}
-            <div className="parent">
+            <div className="text-overlay">
                 <div className="sign-in-container">
                     <div style={{ textAlign: 'left', paddingBotton: '0rem', marginBottom: '3rem' }}>
                         <div className="h2" href="/dashboard">Log In</div></div>
