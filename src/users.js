@@ -1,11 +1,11 @@
-const courses = [
+const users = [
     {
       name: "Ethen",
       userName: 6.5,
       instructor: "111-123-1234",
       email: "ethenfm@gmail.com",
       password: "1234",
-      pfp: url("./Images/ethen.jpeg"),
+      pfp: "./src/Images/ethen.jpeg",
       inProgress: [{
         title: "Introduction to Watercolor Painting",
         category: "art",
@@ -99,4 +99,4 @@ const courses = [
 }
 ];
 
-module.exports = courses;
+module.exports = users;

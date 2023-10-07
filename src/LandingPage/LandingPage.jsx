@@ -5,7 +5,7 @@ import { useState } from 'react';
 import SignIn from '../SignIn/SignIn';
 
 
-const LandingPage = ({quote, setQuote}) => {
+const LandingPage = ({quote, setQuote, email, setEmail}) => {
     const [state, setState] = useState(false);
     
     const divStyle = {
@@ -38,7 +38,7 @@ const LandingPage = ({quote, setQuote}) => {
                     </form>
                 </div>
                 <div style={{ display: state ? 'block' : 'none' }}>
-                    <SignIn state={state} setState={setState}/>
+                    <SignIn state={state} setState={setState} email={email} setEmail={setEmail}/>
                 </div>
             </div>
             <footer style={{ backgroundColor: '#344D56', color: 'white', textAlign: 'center'}} className='footer'></footer>

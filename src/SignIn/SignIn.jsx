@@ -5,15 +5,23 @@ import { useState } from "react";
 import linkedinPng from "../Images/linkedin.png";
 import facebookPng from "../Images/facebook.png";
 import googlePng from "../Images/google.png";
+import users from "../users.js";
 
 // Defines the landing page of the application
 
-function SignIn({state, setState}) {
+function SignIn({state, setState, email, setEmail}) {
+    const [verify, setVerify] = useState("");
 
     const navigate = useNavigate();
     const handleSubmit = (e) => {
+        setEmail(verify);
+        localStorage.setItem("email", verify);
         e.preventDefault();
+        if (verify === users[0].email) { 
         navigate('./dashboard');
+        } else {
+            alert("Incorrect email or password");
+        }
     };
 
     return (
@@ -34,6 +42,7 @@ function SignIn({state, setState}) {
                                 placeholder="Email"
                                 className="email"
                                 style={{ textAlign: 'left' }}
+                                onChange={(e) => setVerify(e.target.value)}
                             />
                         </div>
                         <div className="sign-in-input">

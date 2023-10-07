@@ -24,6 +24,7 @@ function App() {
   const [quote, setQuote] = useState(false);
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   const [dummy, setDummy] = useState(false);
+  const [email, setEmail] = useState('');
 
   // OpenAI API helper function
   function conv(x) {
@@ -65,7 +66,7 @@ function App() {
 
   // Define a variable to store the route elements
   const element = useRoutes([
-    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} /> },
+    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail}/> },
     { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} algorithmResponse={algorithmResponse}/> },
     { path: "/dashboard", element: <Dashboard handleSend={handleSend} /> },
     { path: "/allcourses", element: <AllCourses /> },
