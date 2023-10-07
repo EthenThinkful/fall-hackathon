@@ -223,3 +223,8 @@
     color: black;
     width: 70px;
 } 
+
+ol {
+    padding-left: .5rem;
+}
+

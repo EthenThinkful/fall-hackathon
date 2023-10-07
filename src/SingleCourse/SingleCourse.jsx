@@ -44,7 +44,7 @@ function SingleCourse() {
                     <div className='scroll-container'>
                         <div class='content'>
                             <h4>Assignment due October 27</h4>
-                            <p>15 Lessons (1 hr 28 min)</p>
+                            <div style={{paddingLeft: '.5rem'}}>15 Lessons (1 hr 28 min)</div>
                             <ol>
                                 <div style={{display: 'flex' }}>
                                     <span className='checkmark'></span>

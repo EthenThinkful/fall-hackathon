@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import { courses } from "./data"; // Import the courses data
 import "./DashComp.css"; // Import your CSS file
+import dots from "../../Images/3-buttons.png";
 
 function ImageCarousel() {
   const renderSlides = courses.map((course, index) => {
@@ -18,8 +19,12 @@ function ImageCarousel() {
       >
         <div className="carousel-slide">
           <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
-          <p className="carousel-title">{course.title}</p>
-          {/*<p className="carousel-instructor"><strong>{course.instructor}</strong></p>*/}
+          {/* Ethen adding code */}
+          <div className="carousel-desc-duo">
+          <p className="carousel-title"><strong>{course.title}</strong></p>
+          <p className="carousel-instructor"><strong>{course.instructor}</strong></p>
+          </div>
+          {/* Ethen end adding code */}
         </div>
       </Link>
     );
@@ -33,7 +38,7 @@ function ImageCarousel() {
       infiniteLoop={true}
       autoPlay={false}
       centerMode={true}
-      centerSlidePercentage={33.33}
+      centerSlidePercentage={50}
     >
       {renderSlides}
     </Carousel>
