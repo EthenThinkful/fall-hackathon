@@ -24,11 +24,15 @@ function ImageCarousel({email, conv, data, users}) {
     setAlgorithmResponse(result)
     return result;
   };
-  useEffect(() => {
-      setUser(users[0].completedCourses.title);
-      handleSend();
-  }, []);
-  const renderSlides = algorithmResponse.map((course, index) => {
+
+  // leave this comment!
+  // useEffect(() => {
+  //     setUser(users[0].completedCourses.title);
+  //     handleSend();
+  // }, []);
+  // end leave this comment!
+
+  const renderSlides = courses.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
 
@@ -53,7 +57,8 @@ function ImageCarousel({email, conv, data, users}) {
 
   return (
     <>
-    {algorithmResponse.length > 0 ?
+    {/* leave this comment */}
+    {/* {algorithmResponse.length > 0 ? */}
     <Carousel
       showArrows={true}
       showThumbs={false}
@@ -107,7 +112,8 @@ function ImageCarousel({email, conv, data, users}) {
     >
       {renderSlides}
     </Carousel>
-    : null}
+    {/* leave this comment */}
+    {/* : null} */}
     </>
   );
 }

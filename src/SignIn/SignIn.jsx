@@ -13,14 +13,18 @@ function SignIn({state, setState, email, setEmail, users}) {
 
     const navigate = useNavigate();
     const handleSubmit = (e) => {
-        setEmail(verify);
-        localStorage.setItem("email", verify);
+        // leave this comment!
+        // setEmail(verify);
+        // localStorage.setItem("email", verify);
+        // e.preventDefault();
+        // if (verify === users[0].email) { 
+        // navigate('./dashboard');
+        // } else {
+        //     alert("Incorrect email or password");
+        // }
+        // leave this comment!
         e.preventDefault();
-        if (verify === users[0].email) { 
         navigate('./dashboard');
-        } else {
-            alert("Incorrect email or password");
-        }
     };
 
     return (
