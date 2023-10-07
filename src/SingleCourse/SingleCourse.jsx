@@ -21,8 +21,8 @@ function SingleCourse() {
                             <div className='row'>
                                 <div className='text'>24,000 Likes</div>
                                 <div className='buttons'>
-                                    <button id='LikeButton'>Like</button>
-                                    <button id='ShareButton'>Share</button>
+                                    <button id='LikeButton'><b>Like</b></button>
+                                    <button id='ShareButton'><b>Share</b></button>
                                 </div>
                             {/* end like share section */}
                             </div>
@@ -95,7 +95,7 @@ function SingleCourse() {
                         <div style={{display: 'flex', flexDirection: 'column'}}>
                             {/* 1.) */}
                             {/* start teacher */}
-                            <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1rem', fontWeight: '5px'}}>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1rem', fontFamily: 'Nobile', fontSize: '20px', fontWeight: 'bold' }}>
                                 <div>Teacher</div>
                             </div>
                             {/* end teacher */}
@@ -116,14 +116,14 @@ function SingleCourse() {
                             {/* 3.) */}
                             {/* start button */}
                             <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                                <button id='FollowButton'>Follow</button>
+                                <button id='FollowButton'><b>Follow</b></button>
                             </div>
                             {/* end button */}
 
                             {/* 4.) */}
                             {/* start description */}
                             <div style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap'}}>
-                                <div style={{ textAlign: 'left'}}>Chef Jaime's Kitchen, curated by the visionary Chef Jamie, is a culinary sanctuary in the heart of the city. With a passion for flavors and a dedication to using the finest ingredients, Chef Jamie crafts exceptional dishes that leave a lasting impression. </div>
+                                <div style={{ textAlign: 'left', fontSize: '14px' }}>Chef Jaime's Kitchen, curated by the visionary Chef Jamie, is a culinary sanctuary in the heart of the city. With a passion for flavors and a dedication to using the finest ingredients, Chef Jamie crafts exceptional dishes that leave a lasting impression. </div>
                             </div>
                             {/* end description */}
                         </div>
