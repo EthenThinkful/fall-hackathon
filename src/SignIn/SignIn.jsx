@@ -5,11 +5,10 @@ import { useState } from "react";
 import linkedinPng from "../Images/linkedin.png";
 import facebookPng from "../Images/facebook.png";
 import googlePng from "../Images/google.png";
-import users from "../users.js";
 
 // Defines the landing page of the application
 
-function SignIn({state, setState, email, setEmail}) {
+function SignIn({state, setState, email, setEmail, users}) {
     const [verify, setVerify] = useState("");
 
     const navigate = useNavigate();

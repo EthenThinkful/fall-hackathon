@@ -6,7 +6,8 @@ import ImageCarousel from "./components/ImageCarousel"; // Import the ImageCarou
 import { courses } from "../data"; // Import the courses data
 import "./Dashboard.css";
 
-function Dashboard({ handleSend }) {
+
+function Dashboard({email, users, conv, data}) {
   return (
     <div className="body">
       <div className="dashboard-metrics-container">
@@ -17,7 +18,7 @@ function Dashboard({ handleSend }) {
       <div className="dashboard-container">
         <div className="dashboard-header">
           <h1 className="welcome-message">
-            Welcome back Jane! Ready to learn?
+            {`Welcome back ${email}! Ready to learn?`}
           </h1>
           <div></div>
         </div>
@@ -26,16 +27,16 @@ function Dashboard({ handleSend }) {
             <div />
           </div>
           <h3>Pick Up Where You Left Off</h3>
-          <ImageCarousel  />
+          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
           <h3>
             Because You Liked&nbsp;
-            <em>Traditional Italian Cooking</em>
+            <em>{users[0].completedCourses[0].title}</em>
           </h3>
-          <ImageCarousel  />
+          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
           <h3>Popular Right Now</h3>
-          <ImageCarousel  />
+          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
           <h3>Discover</h3>
-          <ImageCarousel  />
+          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
         </div>
       </div>
     </div>

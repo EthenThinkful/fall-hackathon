@@ -5,9 +5,30 @@ import { Link } from "react-router-dom"; // Import Link from React Router
 import { courses } from "./data"; // Import the courses data
 import "./DashComp.css"; // Import your CSS file
 import dots from "../../Images/3-buttons.png";
+import { searchObjects } from "../../OpenAi/Algorithm";
+import { runPromt } from "../../OpenAi/OpenAi";
+import { useState, useEffect } from "react";
 
-function ImageCarousel() {
-  const renderSlides = courses.map((course, index) => {
+function ImageCarousel({email, conv, data, users}) {
+  // incorporate AI first step here
+  const [user, setUser] = useState("");
+  const [algorithmResponse, setAlgorithmResponse] = useState([]);
+  // OpenAI API call
+  const handleSend = async () => {
+    const res = await runPromt(user);
+    console.log(res);
+    const resTwo = conv(res);
+    console.log(resTwo);
+    const result = searchObjects(data, resTwo);
+    console.log(searchObjects(data, resTwo));
+    setAlgorithmResponse(result)
+    return result;
+  };
+  useEffect(() => {
+      setUser(users[0].completedCourses.title);
+      handleSend();
+  }, []);
+  const renderSlides = algorithmResponse.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
 
@@ -31,6 +52,8 @@ function ImageCarousel() {
   });
 
   return (
+    <>
+    {algorithmResponse.length > 0 ?
     <Carousel
       showArrows={true}
       showThumbs={false}
@@ -84,6 +107,8 @@ function ImageCarousel() {
     >
       {renderSlides}
     </Carousel>
+    : null}
+    </>
   );
 }
 

@@ -14,6 +14,7 @@ import MyCourses from './MyCourses/MyCourses';
 import LandingPage from './LandingPage/LandingPage';
 import { runPromt } from './OpenAi/OpenAi';
 import { searchObjects } from './OpenAi/Algorithm';
+import users from "./users.js";
 const data = require('./data');
 
 function App() {
@@ -66,9 +67,9 @@ function App() {
 
   // Define a variable to store the route elements
   const element = useRoutes([
-    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail}/> },
+    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
     { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} algorithmResponse={algorithmResponse}/> },
-    { path: "/dashboard", element: <Dashboard handleSend={handleSend} /> },
+    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data}/> },
     { path: "/allcourses", element: <AllCourses /> },
     { path: "/mycourses", element: <MyCourses /> },
     { path: "/course", element: <SingleCourse /> },
