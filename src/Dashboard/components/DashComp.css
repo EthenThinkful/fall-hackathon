@@ -242,6 +242,8 @@ button {
 .progress-bar {
   width: 90%;
   margin: 10px 0;
+  border: 2px solid #344d56; /* Add the desired border styles here */
+
 }
 
 .progress-text {
@@ -262,4 +264,49 @@ yearly-progress {
 
 .chart-container {
   height: 400px;
+}
+
+/* MyBadges.js */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Gap between badges */
+  max-width: 640px; /* Set a maximum width to control the number of badges per row */
+  margin: 0 auto; /* Center the badges within the container */
+}
+
+/* Styles for individual badges */
+.badge {
+  position: relative; /* Add relative positioning for tooltip */
+  width: 150px;
+  height: 150px;
+  border: 5px solid #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Add hover styles for badge */
+.badge:hover {
+  /* Increase the shadow spread (third value) and blur (fourth value) */
+  box-shadow: 0px 0px 10px 5px rgba(250, 155, 255, 0.9);
+}
+
+/* Tooltip styles */
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 2px solid transparent; /* Start with a transparent border */
+  border-radius: 28px;
+  transition: border-color 0.2s; /* Add transition for border-color */
+}
+
+/* Show tooltip on hover */
+.badge:hover::before {
+  opacity: 1;
 }

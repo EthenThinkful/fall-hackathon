@@ -3,47 +3,61 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  max-width: 100%; /* Ensure it doesn't exceed the full width */
 }
 
 .dashboard-metrics {
   padding: 20px;
+  flex: 1; /* Allow it to grow and take available space */
+  max-width: 50%; /* Set a maximum width to half of the page */
+  box-sizing: border-box; /* Ensure padding is included in max-width */
 }
 
 .dashboard-container {
   font-weight: 100;
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
 }
 
 .dashboard-header {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .dashboard-content {
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .dashboard-content h3 {
   font-weight: 100;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .dashboard-metrics-container {
-  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   white-space: nowrap;
 }
 
 .welcome-message {
   font-weight: 100;
   text-align: left;
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-bottom: 20px;
   white-space: nowrap;
 }
+
 @media (max-width: 1000px) {
-  .welcome-message {
-    white-space: normal; 
+  .body {
+    flex-direction: column; /* Stack content on smaller screens */
+  }
+
+  .dashboard-metrics {
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+  
+  .dashboard-metrics-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
