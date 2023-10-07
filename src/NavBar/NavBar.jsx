@@ -4,8 +4,11 @@ import { slide as Menu } from 'react-burger-menu';
 import { UilBars } from '@iconscout/react-unicons';
 import { useNavigate, Link } from "react-router-dom";
 import DropdownMenu from '../Search/Search.jsx';
+import userPfp from '../Images/user-pfp.png';
+import logo from '../Images/logo-skillverse.png'
+import searchIcon from '../Images/search.png'
 
-export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched }) {
+export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched, handleSend }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -24,7 +27,9 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
     // Submit Handler
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("pressed");
         setToBeSearched(searchResults);
+        handleSend();
         navigate('../search');
     };
 
@@ -38,21 +43,19 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
     return (
         <>
             <div className="header">
-                <Link to={'/'} className='link'><h1 style={{ margin: 0 }}>Skillverse</h1></Link>
-                <div >Courses</div>
-                <form onSubmit={handleSubmit} >
+                <Link to={'/'} className='link'><img src={logo}/></Link>
+                <Link to={'/allcourses'} className='link' style={{color:'white'}}><div> All Courses</div></Link>
+                <form onSubmit={handleSubmit}>
                     <input 
                     onChange={handleChange}
                     type="search" 
                     name="search" 
                     id="search" 
-                    placeholder="Search for a course" 
                     className='input' value={searchResults} />
-                    <button type='submit'>Submit</button>
                     {/* Need a small submit button in the input tag */}
                 </form>
-                <div >My Courses</div>
-                <Link to={'/profile'} className='link'><div>Click me to go to your profile</div></Link>
+                <div>My Courses</div>
+                <Link to={'/profile'} className='link'><img src={userPfp} className='userPfp'/></Link>
             </div>
 
             <nav className="navbar">

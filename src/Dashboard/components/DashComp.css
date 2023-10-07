@@ -1,5 +1,16 @@
+/* Formatting for metrics side of page */
+
+.metrics-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  margin-bottom: 1px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~uncommenting things that didn't have effect / narrowing what we're working with~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ImageCarousel */
-.carousel-root .carousel .slider-wrapper .slider .control-prev,
+/* .carousel-root .carousel .slider-wrapper .slider .control-prev,
 .carousel-root .carousel .slider-wrapper .slider .control-next {
   display: block;
   background-color: rgba(255, 255, 255, 0.7);
@@ -13,64 +24,242 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-}
+} */
 
 /* Position the left arrow on the left side */
-.carousel-root .carousel .slider-wrapper .slider .control-prev {
+/* .carousel-root .carousel .slider-wrapper .slider .control-prev {
   left: 20px;
-}
+} */
 
 /* Position the right arrow on the right side */
-.carousel-root .carousel .slider-wrapper .slider .control-next {
+/* .carousel-root .carousel .slider-wrapper .slider .control-next {
   right: 20px;
-}
+} */
+
+/* .carousel-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+} */
+
+/* .carousel-root .carousel .slider-wrapper .slider {
+  display: flex;
+  justify-content: space-between;
+} */
 
 /* Style for arrow hover state */
-.carousel-root .carousel .slider-wrapper .slider .control-prev:hover,
+/* .carousel-root .carousel .slider-wrapper .slider .control-prev:hover,
 .carousel-root .carousel .slider-wrapper .slider .control-next:hover {
   background-color: rgba(255, 255, 255, 0.9);
+} */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~uncommenting things that didn't have effect / narrowing what we're working with~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*Ethen hiding dots*/
+.carousel-root .carousel .control-dots {
+  display: none;
 }
 
-.carousel-image-container {
-  width: 100%;
-  height: 200px; /* You can adjust the height as needed */
-  overflow: hidden;
+.carousel-root .carousel.carousel-slider {
+  overflow: visible;
 }
 
-.carousel-slide {
-  position: relative; /* To position the title relative to the image */
+.carousel-root .carousel .slider-wrapper {
+  width: 672px;
 }
 
-.carousel-image {
-  width: 100%;
-  height: 200px; /* You can adjust the height as needed */
-  object-fit: cover;
+.carousel-root .carousel .slider-wrapper ul {
+  margin: 0rem 11rem;
+  transform: translate3d(672px, 0px, 0px);
+  transition-duration: 350ms;
 }
 
+/* arrows */
+.arrow-right {
+  position: absolute;
+  top: calc(50% - 15px);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  /* margin-left: 10.5rem; */
+  border: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.arrow-left {
+  position: absolute;
+  top: calc(50% - 15px);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  /* margin-left: -12.5rem; */
+  border: none;
+}
+
+@media (min-width: 1024px) {
+  .arrow-left {
+    margin-left: -23.5rem;
+    /* margin-top: -3rem; */
+  }
+
+  .arrow-right {
+    margin-left: 21rem;
+    /* margin-top: -3rem; */
+  }
+}
+/* arrows */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~flex column container~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* reference: */
+/* .carousel-desc-duo {
+  height: 20%; //1/3 of the container's height
+  margin-top: 62%; //To create space for the image above
+  width: 304px;
+  border: 1px solid #fff;
+  background: #f9fbfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  padding: 6px 5px 4px 9px;
+} */
+
+/* apply here: */
+.carousel-desc-duo {
+  height: 19%;
+  /* margin-top: 62%; */
+  /* width: 304px; */
+  border: 1px solid #fff;
+  background: #f9fbfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  padding: 0rem 0rem 2rem 18rem;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~flex between container~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .carousel-title {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Add a background color for better readability */
-  color: #fff; /* Text color for the title */
-  padding: 8px; /* Add some padding to the title */
+  /* background-color: rgba(255, 255, 255); */
+  color: #000000;
+  padding: 27px 9px 27px 9px;
   margin: 0;
 }
 
-/* MonthlyProgress */
-
-/* Increase the height of the progress bar */
-.react-progress-bar {
-  height: 20px; /* Adjust the height as per your preference */
+.carousel .slide .carousel-desc-duo img {
+  width: 19px;
+  height: 5px;
+  flex-shrink: 0;
+  margin-top: 12px;
 }
 
-/* Optionally, you can also style the completed part of the progress bar */
-.react-progress-bar__completed {
-  background-color: #007bff; /* Change the color as desired */
+.dot-menuu {
+  width: 19px;
+  height: 5px;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~end flex between container~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.carousel-instructor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(255, 255, 255); */
+  color: #000000;
+  padding: 8px;
+  margin: -2.5rem 0rem 0rem 0rem;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~end flex column container~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* .carousel-slide {
+  flex: 0 0 calc(33.33% - 10px);
+  margin-right: 10px;
+  position: relative;
+} */
+
+.carousel-slide {
+  flex: 0 0 calc(33.33% - 100px);
+  margin-right: 10px;
+  position: relative;
+  height: 250px;
+  padding-right: 1rem;
+  margin-top: 35px;
+}
+
+/* .course-img {
+  height: 250px;
+  width: 320px;
+  position: relative;
+  padding-right: 1rem;
+  margin-top: 35px;
+} */
+
+.carousel-slide:last-child {
+  margin-right: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Ethen images~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* .carousel-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+} */
+
+/* .course-box-two {
+  height: 80%;
+  position: absolute;
+  width: 320px;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-color: lightgray;
+} */
+
+.carousel-image {
+  height: 80%;
+  width: 320px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-color: lightgray;
+  object-fit: cover;
+}
+
+/* MonthlyProgress.css */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 90%;
+  margin: 10px 0;
+}
+
+.progress-text {
+  margin-top: 10px;
+}
+
+/* YearlyProgress.js */
+yearly-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chart-header {
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  height: 400px;
 }

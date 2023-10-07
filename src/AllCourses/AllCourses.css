@@ -1,0 +1,70 @@
+.main {
+  width: 1440px;
+  height: 1759px;
+  background: #fffdfa;
+}
+
+.all-courses-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 94px;
+}
+
+.all-courses {
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.all-courses-left {
+  background: #d0addc;
+  width: 131px;
+  height: 34px;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+  margin-left: 178px;
+}
+
+.courses-genre-container {
+  margin-left: 178px;
+}
+
+.left-course-headers {
+  text-align: left;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 53px;
+}
+
+hr {
+  width: 150.03px;
+  height: 1px;
+  background: #7869b9;
+  margin-top: 6.5px;
+  margin-right: 1111.99px;
+  margin-bottom: 25px;
+}
+
+.left-courses-list {
+  margin-top: 19.5px;
+  width: 150px;
+  height: 183px;
+  flex-shrink: 0;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: contents;
+}
+
+.left-courses-list > p {
+  padding-left: 0;
+}

@@ -1,0 +1,215 @@
+
+.all-content {
+    margin: 2rem 22rem;
+}
+
+/* left section styling */
+.left-section {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow {
+    /* color: #0d0101; */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+}
+
+.arrow::after {
+    content: '\2190'; /* Unicode arrow left character */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); 
+} 
+
+.cooking-title {
+    color: #000;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: .25rem;
+}
+
+.author-title {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.text {
+    font-size: 12px;
+}
+
+.row button {
+    margin-left: 15px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #B382DD;
+    color: black;
+    width: 70px;
+}
+
+.navbar {
+    width: 740px;
+    height: 50px;
+    padding-left: 30px;
+    padding-top: 5px;
+    background-color: #344D56;
+    color: white;
+    margin-top: 2rem;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove the default bullet points */
+    padding: 0;
+}
+
+.navbar li {
+    display: inline; /* Display list items horizontally */
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    margin-right: 60px; /* Add somme spacing between items */
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.left-bottom {
+    display: flex;
+    /* flex-direction: row; */
+    margin-top: 50px;
+    width: 100%;
+    justify-content: center;  
+    text-align: left;
+}
+
+.scroll-container {
+    position: relative;
+    width: 350px;
+    height: 350px; /* Add the desired height for the container */
+    overflow-y: scroll; /* Enable vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin-left: 1.5rem;
+    margin-top: 100px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    background-color: #344D56;
+    color: white;
+}
+
+.content {
+    /* Set content dimensions and styling */
+    width: 100%;
+    padding-left: 15px;
+    padding-top: 25px;
+    margin-bottom: 10px;
+}
+
+.content h4 {
+    margin-top: 0px;
+    font-size: 18px;
+}
+
+.content p {
+    margin-left: 0px;
+}
+
+ol {
+    padding-left: .5rem;
+}
+
+.content li {
+    /* Set content dimensions and styling */
+    margin-bottom: 10px;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 10px;
+    height: 11px;
+    background-image: url('../Images/check-mark.png'); /* Replace with your checkmark image */
+    background-size: cover;
+    margin-right: 30px; /* Adjust spacing between checkmark and text */
+  }
+
+.no-checkmark {
+    margin-left: 40px;
+}
+
+/* Adjust the scrollbar thumb height (may not work in all browsers) */
+.scroll-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 12px;
+    height: 50px; /* Adjust the height as needed */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.right-bottom {
+    display: flex;
+    height: 250px; 
+    padding: 2rem;
+    margin-left: 20px;
+    margin-top: 130px;
+    background-color: #344D56;
+    color: white;
+}
+
+.image-title image {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.image-title title {
+    display: flex;
+    position:relative;
+    justify-content: center;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+button#FollowButton {
+    margin-left: 0px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #B382DD;
+    color: black;
+    width: 70px;
+} 
+
+
+

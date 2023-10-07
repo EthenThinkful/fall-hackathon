@@ -5,22 +5,43 @@ import SignIn from "./SignIn/SignIn";
 import NavBar from './NavBar/NavBar';
 import DropdownMenu from './Search/Search';
 import Dashboard from './Dashboard/Dashboard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Search from './Search/Search';
-import CoursesList from './Course/CoursesList';
+import SingleCourse from './SingleCourse/SingleCourse';
 import UserProfile from './UserProfile/UserProfile';
+import AllCourses from './AllCourses/AllCourses';
+import MyCourses from './MyCourses/MyCourses';
+import LandingPage from './LandingPage/LandingPage';
 import { runPromt } from './OpenAi/OpenAi';
+import { searchObjects } from './OpenAi/Algorithm';
+import users from "./users.js";
+const data = require('./data');
 
 function App() {
 
   // Define state variables for the NavBar & Search
   const [searchResults, setSearchResults] = useState('');
   const [toBeSearched, setToBeSearched] = useState('');
+  const [quote, setQuote] = useState(false);
+  const [algorithmResponse, setAlgorithmResponse] = useState([]);
+  const [dummy, setDummy] = useState(false);
+  const [email, setEmail] = useState('');
 
-  // Define a custom function to handle sending the prompt to OpenAI
+  // OpenAI API helper function
+  function conv(x) {
+    return x.match(/'([^']+)'/g)?.map(match => match.slice(1, -1)) || [];
+  }
+
+  // OpenAI API call
   const handleSend = async () => {
-    const res = await runPromt();
+    const res = await runPromt(searchResults);
     console.log(res);
+    const resTwo = conv(res);
+    console.log(resTwo);
+    const result = searchObjects(data, resTwo);
+    console.log(searchObjects(data, resTwo));
+    setAlgorithmResponse(result)
+    return result;
   }
 
   // Define a variable to store the current path
@@ -36,6 +57,7 @@ function App() {
           setSearchResults={setSearchResults}
           toBeSearched={toBeSearched}
           setToBeSearched={setToBeSearched}
+          handleSend={handleSend}
         />
       );
     }
@@ -45,10 +67,12 @@ function App() {
 
   // Define a variable to store the route elements
   const element = useRoutes([
-    { path: "/", element: <SignIn /> },
-    { path: "/search", element: <Search searchResults={searchResults} setSearchResults={setSearchResults} toBeSearched={toBeSearched} setToBeSearched={setToBeSearched} /> },
-    { path: "/dashboard", element: <Dashboard handleSend={handleSend} /> },
-    { path: "/course", element: <CoursesList /> },
+    { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
+    { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} algorithmResponse={algorithmResponse}/> },
+    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data}/> },
+    { path: "/allcourses", element: <AllCourses /> },
+    { path: "/mycourses", element: <MyCourses /> },
+    { path: "/course", element: <SingleCourse /> },
     { path: "/profile", element: <UserProfile /> },
   ]);
 
