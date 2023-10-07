@@ -42,28 +42,35 @@ function SingleCourse() {
                     {/* begin scroll container */}
                     
                     <div className='scroll-container'>
-                    <div class='content'>
-                        <h4>Assignment due October 27</h4>
-                        <p>15 Lessons (1 hr 28 min)</p>
+                        <div class='content'>
+                            <h4>Assignment due October 27</h4>
+                            <p>15 Lessons (1 hr 28 min)</p>
                             <ol>
-                                <div style={{display: 'flex'}}>
-                            <span className="checkmark"></span><li>
-                                    Italian Spices
-                                </li>
+                                <div style={{display: 'flex' }}>
+                                    <span className='checkmark'></span>
+                                    <li>Italian Spices</li>
                                 </div>
-                               <li className='li'><span className="checkmark"></span>Pantry Must Haves</li>
-                                <li><span className="checkmark"></span>Cooking Utensils</li>
-                                <li><span className="checkmark"></span>Noodles</li>
-                                <li>Pasta Sauce</li>
-                                <li>Choosing the Best Produce</li>
-                                <li>Cooking Temperatures</li>
-                                <li>What is a Ravioli?</li>
-                                <li>What Cheese Should I Use?</li>
-                                <li>Putting It All Together</li>
+                                <div style={{display: 'flex' }}>
+                                    <span className='checkmark'></span>
+                                    <li>Pantry Must Haves</li></div>
+                                <div style={{display: 'flex'}}>
+                                    <span className='checkmark'></span>
+                                    <li>Cooking Utensils</li></div>
+                                <div style={{display: 'flex'}}>
+                                    <span className='checkmark'></span>
+                                    <li>Noodles</li>
+                                </div>
+                                <div className='no-checkmark'>   
+                                    <li>Pasta Sauce</li>
+                                    <li>Choosing the Best Produce</li>
+                                    <li>Cooking Temperatures</li>
+                                    <li>What is a Ravioli?</li>
+                                    <li>What Cheese Should I Use?</li>
+                                    <li>Putting It All Together</li>
+                                </div>
                             </ol>
-                        </div> 
+                        </div>
                     </div>
-                    
                 {/* end scroll container */}                  
                 </div>
             </div>
@@ -73,7 +80,7 @@ function SingleCourse() {
             <div className='bottom-section'>
                 {/* startleft container */}
                 <div className='left-container'>
-                    <div style={{display: 'flex', flexDirection: 'column', marginLeft: '3rem' }}>
+                    <div style={{display: 'flex', flexDirection: 'column', marginLeft: '1rem' }}>
                         <div style={{ textAlign: 'left', fontSize: '1.5rem', fontWeight: 'bold' }}>About this Class</div>
                         <div style={{textAlign: 'left', marginTop: '2rem'}}>The course on traditional Italian cooking offers a comprehensive exploration of Italy's rich culinary heritage. Participants will delve into the fundamental principles that underpin this renowned cuisine, including an emphasis on fresh, high-quality ingredients, and the art of balancing flavors to create delectable dishes.</div>
                         <div style={{textAlign: 'left', marginTop: '2rem'}}>From mastering the art of pasta-making to understanding the nuances of regional sauces and incorporating essential Mediterranean ingredients, this course provides a hands-on and in-depth look at the techniques and traditions that have made Italian cooking a global culinary sensation. Through practical demonstrations and interactive cooking sessions, participants will gain a deep appreciation for the time-honored methods that define traditional Italian gastronomy.</div>
@@ -131,27 +138,3 @@ function SingleCourse() {
 
 export default SingleCourse;
 
-{/* 
-   <div className='bottom-section'>
-                <div className='container'>
-                    <div className='nav-bar'>
-                        <p>About</p>
-                        <p>Reviews</p>
-                        <p>Discussion Board</p>
-                        <p>Resources</p>
-                        <p>Q&A</p>
-                    </div>
-                </div>
-                    <h1>About this Class</h1>
-                    <p>The course on traditional Italian cooking offers a comprehensive exploration of Italy's rich culinary heritage. Participants will delve into the fundamental principles that underpin this renowned cuisine, including an emphasis on fresh, high-quality ingredients, and the art of balancing flavors to create delectable dishes.</p>
-                    <p>From mastering the art of pasta-making to understanding the nuances of regional sauces and incorporating essential Mediterranean ingredients, this course provides a hands-on and in-depth look at the techniques and traditions that have made Italian cooking a global culinary sensation. Through practical demonstrations and interactive cooking sessions, participants will gain a deep appreciation for the time-honored methods that define traditional Italian gastronomy.</p>
-                </div>
-                <div className='teacher-profile'>
-                    <h1>Teacher</h1>
-                    <div className='title'>
-                        <img src={require("../Images/photo.jpg")} />
-                         <p>Jamie's Kitchen</p>
-                        <p>45K Likes</p>
-                        <button>Follow</button>
-                        <p>Chef Jamie's Kitchen, curated by the visionary Chef Jamie, is a culinary sanctuary in the heart of the city. With a passion </p>
-                    </div>  */}
