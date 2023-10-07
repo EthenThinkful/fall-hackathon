@@ -12,11 +12,20 @@ export const data = [
 export const options = {
   pieHole: 0.5,
   is3D: false,
-  pieSliceText: "value", // Display the value (hours) on each slice
-  colors: ["#7869B9", "violet", "#D0ADDC", "purple"],
-  legend: "bottom",
-  alignment: "start",
+  pieSliceText: "value",
+  colors: ["#7869B9", "violet", "#D0ADDC", "77588a"],
+  legend: {
+    position: "top",
+    alignment: "center",
+    textStyle: {
+      color: "black", // You can adjust the text color here
+      fontSize: 20,   // Adjust the font size as needed
+      fontName: "Nobile",
+    },
+  },
+  backgroundColor: "transparent",
 };
+
 
 export const YearlyProgress = ({ className }) => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -38,8 +47,8 @@ export const YearlyProgress = ({ className }) => {
       <div className="chart-container">
         <Chart
           chartType="PieChart"
-          width="100%" // Set width to 100% to make it responsive
-          height="400px" // Adjust the height as needed (e.g., 400px)
+          width="100%" 
+          height="100%" 
           data={data}
           options={options}
         />
