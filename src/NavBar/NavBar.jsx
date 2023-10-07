@@ -44,7 +44,7 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
         <>
             <div className="header">
                 <Link to={'/'} className='link'><img src={logo}/></Link>
-                <div> All Courses</div>
+                <Link to={'/allcourses'} className='link' style={{color:'white'}}><div> All Courses</div></Link>
                 <form onSubmit={handleSubmit}>
                     <input 
                     onChange={handleChange}
