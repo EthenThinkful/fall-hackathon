@@ -1,17 +1,15 @@
 import React from "react";
 import "./AllCourses.css";
+import videoEditingPic from "../Images/video-editing.jpg";
+import sarasVideosPic from "../Images/saras-videos.png";
 
 function AllCourses() {
   return (
     <>
       <div className="main">
-        <div className="all-courses-header">
-          <div className="all-courses">All Courses</div>
-        </div>
         <div className="all-courses-left-section">
           <div className="all-courses-left">All Courses</div>
           <div className="courses-genre-container">
-            {/* <div className="creative-container"> */}
             <div className="left-course-headers">
               CREATIVE <hr />
               <div />
@@ -24,8 +22,6 @@ function AllCourses() {
               <p>Music</p>
               <p>Photography</p>
             </div>
-            {/* </div> */}
-            {/* <div className="tech-container"> */}
             <div className="left-course-headers">
               TECH <hr />
             </div>
@@ -35,8 +31,6 @@ function AllCourses() {
               <p>Data Science</p>
               <p>Information Technology</p>
             </div>
-            {/* </div> */}
-            {/* <div className="lifestyle-container"> */}
             <div className="left-course-headers">
               LIFESTYLE
               <hr />
@@ -47,7 +41,48 @@ function AllCourses() {
               <p>Home and Garden</p>
               <p>Travel</p>
             </div>
-            {/* </div> */}
+          </div>
+        </div>
+
+        <div className="all-courses-right-section">
+          <div className="all-courses">All Courses</div>
+          <div className="staff-pick-left-section">
+            <div className="staff-pick-container">
+              <div className="staff-pick-header">Staff Pick</div>
+              <div
+                style={{
+                  fontSize: "15px",
+                  width: "14rem",
+                  textAlign: "left",
+                  margin: "1rem",
+                  marginBottom: "38px",
+                }}
+              >
+                Video Editing for Absolute Beginners - 22 Lessons
+              </div>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <img
+                  style={{ marginLeft: "11px" }}
+                  src={sarasVideosPic}
+                  className="saras-videos-img"
+                ></img>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    fontSize: "12px",
+                    justifyContent: "center",
+                    marginLeft: "12px",
+                  }}
+                >
+                  <div style={{ fontWeight: "700" }}>Sara's Videos</div>
+                  <div>5K Likes</div>
+                </div>
+              </div>
+            </div>
+            <div className="staff-pick-img">
+              <img src={videoEditingPic}></img>
+            </div>
           </div>
         </div>
       </div>
