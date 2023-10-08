@@ -92,9 +92,7 @@ flex-shrink: 0;
 }
 
 .bookmark {
-  width: 23.265px;
-height: 28.681px;
-flex-shrink: 0;
+  margin-top: 4px;
 }
 
 .filter-btn:hover {

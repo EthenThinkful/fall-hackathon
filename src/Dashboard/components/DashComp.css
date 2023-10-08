@@ -143,9 +143,7 @@ button {
 
 .carousel .slide .carousel-desc-duo img {
   width: 19px;
-  height: 5px;
   flex-shrink: 0;
-  margin-top: 12px;
 }
 
 .dot-menuu {
