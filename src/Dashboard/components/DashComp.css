@@ -1,4 +1,12 @@
 
+.metrics-heading {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~uncommenting things that didn't have effect / narrowing what we're working with~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ImageCarousel */
 /* .carousel-root .carousel .slider-wrapper .slider .control-prev,
@@ -229,11 +237,9 @@ button {
 }
 
 .progress-bar {
-  width: 90%;
+  width: 95%;
   border: 2px solid #344d56; /* Add the desired border styles here */
 }
-
-
 
 /* YearlyProgress.js */
 yearly-progress {
@@ -248,7 +254,7 @@ yearly-progress {
 }
 
 .chart-container {
-  height: 400px;
+  height: 300px;
 }
 
 /* MyBadges.js */
@@ -256,7 +262,7 @@ yearly-progress {
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Gap between badges */
-  max-width: 640px; /* Set a maximum width to control the number of badges per row */
+  max-width: 550px; /* Set a maximum width to control the number of badges per row */
   margin: 0 auto; /* Center the badges within the container */
 }
 
