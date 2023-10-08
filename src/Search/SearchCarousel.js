@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom"; // Import Link from React Router
+import './SearchCarousel.css';
 import dots from "../Images/3-buttons.png";
 import bookmark from "../Images/icon-save.png";
 import { searchObjects } from "../OpenAi/Algorithm";
@@ -65,12 +66,10 @@ function SearchCarousel({ toBeSearched, conv }) {
             >
                 <div className="carousel-slide">
                     <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
-                    {/* Ethen adding code */}
                     <div className="carousel-desc-duo">
                         <p className="carousel-title"><strong>{course.title}</strong></p><img src={dots} alt="dots" className="dot-menuu" />
                         <p className="carousel-instructor" style={{ fontWeight: "700" }}><strong>{course.instructor}</strong></p><img src={bookmark} alt="bookmark" className="bookmark" />
                     </div>
-                    {/* Ethen end adding code */}
                 </div>
             </Link>
         );
@@ -87,7 +86,7 @@ function SearchCarousel({ toBeSearched, conv }) {
                 infiniteLoop={true}
                 autoPlay={false}
                 centerMode={true}
-                centerSlidePercentage={50}
+                centerSlidePercentage={33.75}
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
                         <button

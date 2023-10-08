@@ -84,17 +84,17 @@ function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched,
     <div className='search-results'>{data.length} results</div>
     <button className="filter-btn">Filters</button>
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
-    <div className='search-carousel-container'>
+    
     <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
-    </div>
+ 
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
-    <div className='search-carousel-container'>
+
     <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
-    </div>
+
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
-    <div className='search-carousel-container'>
+
     <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
-    </div>
+
     <div className='title-container'></div>
     </div>
     {/* <NavBar searchResults={searchResults} setSearchResults={setSearchResults}/><button onClick={handleSearch}>Search</button> */}

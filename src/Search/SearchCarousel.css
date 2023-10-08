@@ -63,56 +63,20 @@
     overflow: visible;
   }
   
-  .carousel-root .carousel .slider-wrapper .poopie {
-    width: 1008px;
-  }
-  
-  .carousel-root .carousel .slider-wrapper ul {
-    margin: 0rem 6rem;
+  .search-carousel-container .carousel-root .carousel .slider-wrapper ul {
+    margin: 0rem 0rem;
     transform: translate3d(1008px, 0px, 0px);
     transition-duration: 350ms;
   }
-
-  /* .carousel-root .carousel .slider-wrapper li {
-    min-width: none;
-  } */
-  
-  /* arrows */
-  .arrow-right {
-    position: absolute;
-    top: calc(50% - 15px);
-    cursor: pointer;
-    z-index: 10;
-    width: 40px;
-    height: 40px;
-    /* margin-left: 10.5rem; */
-    border: none;
-  }
-  
-  button {
-    background-color: transparent;
-    border: none;
-  }
-  
-  .arrow-left {
-    position: absolute;
-    top: calc(50% - 15px);
-    cursor: pointer;
-    z-index: 10;
-    width: 40px;
-    height: 40px;
-    /* margin-left: -12.5rem; */
-    border: none;
-  }
   
   @media (min-width: 1024px) {
-    .arrow-left {
-      margin-left: -23.5rem;
+    .search-carousel-container .carousel-root .carousel .arrow-right {
+      margin-left: 21rem;
       /* margin-top: -3rem; */
     }
   
-    .arrow-right {
-      margin-left: 21rem;
+    .search-carousel-container .carousel-root .carousel .arrow-left {
+      margin-left: -46rem;
       /* margin-top: -3rem; */
     }
   }
@@ -131,17 +95,6 @@
     padding: 6px 5px 4px 9px;
   } */
   
-  /* apply here: */
-  .carousel-desc-duo {
-    height: 19%;
-    /* margin-top: 62%; */
-    /* width: 304px; */
-    border: 1px solid #fff;
-    background: #f9fbfc;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: 1rem;
-    padding: 0rem 0rem 2rem 18rem;
-  }
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~flex between container~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   .carousel-title {
     position: absolute;
@@ -152,13 +105,6 @@
     color: #000000;
     padding: 27px 9px 27px 9px;
     margin: 0;
-  }
-  
-  .carousel .slide .carousel-desc-duo img {
-    width: 19px;
-    height: 5px;
-    flex-shrink: 0;
-    margin-top: 12px;
   }
   
   .dot-menuu {
@@ -191,7 +137,7 @@
     flex: 0 0 calc(33.33% - 100px);
     margin-right: 10px;
     position: relative;
-    width: 320px;
+    /* width: 320px; */
     height: 250px;
     padding-right: 1rem;
     margin-top: 35px;
