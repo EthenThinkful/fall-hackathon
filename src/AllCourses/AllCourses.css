@@ -1,13 +1,16 @@
 .main {
-  width: 1440px;
-  height: 1759px;
   background: #fffdfa;
+  display: flex;
+  flex-direction: row;
 }
 
-.all-courses-header {
+.all-courses-left-section {
+  padding-right: 275px;
+}
+
+.all-courses-right-section {
   display: flex;
-  justify-content: center;
-  margin-top: 94px;
+  flex-direction: column;
 }
 
 .all-courses {
@@ -16,6 +19,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-top: 94px;
 }
 
 .all-courses-left {
@@ -24,11 +28,10 @@
   height: 34px;
   text-align: center;
   font-size: 25px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  margin-top: 10px;
+  margin-top: 132px;
   margin-left: 178px;
+  padding-top: 7px;
 }
 
 .courses-genre-container {
@@ -36,35 +39,72 @@
 }
 
 .left-course-headers {
-  text-align: left;
   font-size: 25px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   margin-top: 53px;
 }
 
 hr {
-  width: 150.03px;
   height: 1px;
   background: #7869b9;
   margin-top: 6.5px;
-  margin-right: 1111.99px;
   margin-bottom: 25px;
 }
 
 .left-courses-list {
-  margin-top: 19.5px;
-  width: 150px;
-  height: 183px;
-  flex-shrink: 0;
   font-size: 15px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  display: contents;
+  white-space: nowrap;
 }
 
 .left-courses-list > p {
   padding-left: 0;
+}
+
+.staff-pick-left-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 46px;
+}
+
+.staff-pick-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: 1px solid #fff;
+  background: #f9fbfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.staff-pick-header {
+  background: #d0addc;
+  width: 111px;
+  height: 34px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: 22px;
+  margin-left: 61px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.saras-videos-img {
+  display: flex;
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 62px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.staff-pick-img {
+  display: flex;
+  width: 403px;
+  height: 240px;
+  flex-shrink: 0;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
