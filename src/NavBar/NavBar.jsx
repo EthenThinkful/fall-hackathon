@@ -7,6 +7,7 @@ import DropdownMenu from '../Search/Search.jsx';
 import userPfp from '../Images/user-pfp.png';
 import logo from '../Images/logo-skillverse.png'
 import searchIcon from '../Images/search.png'
+import ethen from "../Images/ethenpfp.jpeg";
 
 export default function NavBar({searchResults, setSearchResults, toBeSearched, setToBeSearched, handleSend }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
                     {/* Need a small submit button in the input tag */}
                 </form>
                 <div>My Courses</div>
-                <Link to={'/profile'} className='link'><img src={userPfp} className='userPfp'/></Link>
+                <Link to={'/profile'} className='link'><img src={ethen} className='userPfp'/></Link>
             </div>
 
             <nav className="navbar">
