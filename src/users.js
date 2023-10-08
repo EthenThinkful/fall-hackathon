@@ -9,26 +9,26 @@ const users = [
       password: "1234",
       pfp: "./Images/ethenpfp.jpeg",
       inProgress: [{
-        title: "Introduction to Watercolor Painting",
-        category: "art",
+        title: "JavaScript Fundamentals",
+        category: "programming",
         level: "beginner",
-        lessons: 6,
-        time: 6.5,
-        instructor: "Ahmed Ali",
+        lessons: 10,
+        time: 1.5,
+        instructor: "CodeMaster John",
         description:
-          "Unleash your creativity with watercolor painting! Join artist Ahmed Ali as he guides you through the basics of this expressive art form. From color mixing to brush techniques, you'll gain the skills to create beautiful watercolor artworks. No prior experience needed - just bring your passion for art!",
-        image: "https://s3-alpha-sig.figma.com/img/4237/5d12/cbe3efa06cab26cb3d909e9a295ec12a?Expires=1697414400&Signature=TWpPugpOgjLo~ibO8BlX9J~CipRt3LP75Z~8wLl1-t2lYjWbxgukYDmrA7LsyK~-9IDUK86ZqZd7lS3inWrRXNIAwmTv7VjU1pBQxAFVegddZWFPajsh3dR2hR3ZEXlrvfV5prWwxvOS3oLjtB9f4dYnImqVtUHwKWM12v4HXKAYb3YtSdpg8dVgMRglp3ZKMEOCQaFTDAE7ZNCMkktSt~wD~Nqp~42Tt3CpdCK2WwUxAg8yE~HZBlpDPJU32SGaIUkE0eVwa34ODKssGPqz5KWHzE38hgfnIxekYDLAY1DlI11AQNQEH2IqVx07lEAT1PIpShtzmFTnIs0v87beaQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+          "Get started with the basics of JavaScript programming. No prior coding experience needed!",
+        image: "https://images.unsplash.com/photo-1552308995-2baac1ad5490?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphdmFzY3JpcHR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
       },
       {
-        title: "Introduction to Pottery",
-        category: "art",
-        level: "beginner",
+        title: "Marketing Fundamentals",
+        category: "marketing",
+        level: "any",
         lessons: 8,
-        time: 6.6,
-        instructor: "Hiroshi Yamamoto",
+        time: 1.0,
+        instructor: "Marketing Basics Academy",
         description:
-          "Unleash your creativity with clay in this beginner's pottery course led by Hiroshi Yamamoto. Learn the basics of hand-building and wheel-throwing, and create your own functional and artistic pottery pieces. Whether you're a budding artist or simply looking for a relaxing hobby, pottery is a rewarding craft to explore.",
-        image: "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2169&q=80"
+          "Start your marketing journey with the fundamentals of marketing strategy and tactics.",
+        image: "https://images.unsplash.com/photo-1494178270175-e96de2971df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
       }
     ],
       completedCourses: [

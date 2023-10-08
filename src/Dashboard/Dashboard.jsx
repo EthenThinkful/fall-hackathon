@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { YearlyProgress } from "./components/YearlyProgress";
 import { MonthlyProgress } from "./components/MonthlyProgress";
 import { MyBadges } from "./components/MyBadges";
@@ -7,8 +7,15 @@ import { courses } from "../data"; // Import the courses data
 import "./Dashboard.css";
 
 
-function Dashboard({email, users, conv, data}) {
+function Dashboard({email, users, conv, data, user}) {
+  const [inProgress, setInProgress] = useState([]);
+  useEffect(() => {
+    console.log(user.inProgress);
+    setInProgress(user.inProgress);
+  }, []);
   return (
+    <>
+    {inProgress.length > 0 ? (
     <div className="body">
       <div className="dashboard-metrics-container">
         <MonthlyProgress className="monthly-progress" />
@@ -18,7 +25,7 @@ function Dashboard({email, users, conv, data}) {
       <div className="dashboard-container">
         <div className="dashboard-header">
           <h1 className="welcome-message">
-            {`Welcome back ${email}! Ready to learn?`}
+            {`Welcome back ${user.name}! Ready to learn?`}
           </h1>
           <div></div>
         </div>
@@ -27,19 +34,21 @@ function Dashboard({email, users, conv, data}) {
             <div />
           </div>
           <h3>Pick Up Where You Left Off</h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={inProgress}/>
           <h3>
             Because You Liked&nbsp;
-            <em>{users[0].completedCourses[0].title}</em>
+            <em>{user.completedCourses[0].title}</em>
           </h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
           <h3>Popular Right Now</h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
           <h3>Discover</h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
         </div>
       </div>
     </div>
+    ): null}
+    </>
   );
 }
 

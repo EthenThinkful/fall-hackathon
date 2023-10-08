@@ -9,9 +9,9 @@ import { searchObjects } from "../../OpenAi/Algorithm";
 import { runPromt } from "../../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
 
-function ImageCarousel({email, conv, data, users}) {
+function ImageCarousel({email, conv, data, user}) {
   // incorporate AI first step here
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   // OpenAI API call
   const handleSend = async () => {
@@ -32,13 +32,13 @@ function ImageCarousel({email, conv, data, users}) {
   // }, []);
   // end leave this comment!
 
-  const renderSlides = courses.map((course, index) => {
+  const renderSlides = user.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
 
     return (
       <Link
-        to={`/courses/${hyphenatedTitle}`}
+        to={`/course/${hyphenatedTitle}`}
         key={index}
         className="carousel-slide-link"
       >

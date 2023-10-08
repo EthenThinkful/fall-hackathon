@@ -10,19 +10,7 @@ import ethen from "../Images/ethenpfp.jpeg";
 
 // defines the user profile of the application
 
-function UserProfile({ users }) {
-  const [user, setUser] = useState(null);
-  const [pfp, setPfp] = useState(null);
-  useEffect(() => {
-    users.map((user) => {
-      if (localStorage.getItem("email") === user.email) {
-        setUser(user);
-        setPfp(`.${user.pfp}`);
-      } else {
-        return null;
-      }
-    });
-  }, []);
+function UserProfile({ user }) {
   // const user = {
   //   username: "JaneD2013",
   //   email: email,
@@ -74,7 +62,7 @@ function UserProfile({ users }) {
                 <div key={course.id} className="course-img">
                   {" "}
                   {/* Use a unique key for each course */}
-                  <Link to="/course" className="link">
+                  <Link to={`/course/${course.title.replace(/\s+/g, "-").toLowerCase()}`} className="link">
                     <img
                       className="course-box-two"
                       src={course.image}

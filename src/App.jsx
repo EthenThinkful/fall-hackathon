@@ -28,6 +28,20 @@ function App() {
   const [email, setEmail] = useState('');
   const [aiArray, setAiArray] = useState([]);
 
+  // grabb logged in user
+  const [user, setUser] = useState(null);
+  const [pfp, setPfp] = useState(null);
+  useEffect(() => {
+    users.map((user) => {
+      if (localStorage.getItem("email") === user.email) {
+        setUser(user);
+        setPfp(`.${user.pfp}`);
+      } else {
+        return null;
+      }
+    });
+  }, []);
+
   // OpenAI API helper function
   function conv(x) {
     return x.match(/'([^']+)'/g)?.map(match => match.slice(1, -1)) || [];
@@ -71,11 +85,11 @@ function App() {
   const element = useRoutes([
     { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
     { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} conv={conv}/> },
-    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data}/> },
+    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data} user={user}/> },
     { path: "/allcourses", element: <AllCourses /> },
     { path: "/mycourses", element: <MyCourses /> },
-    { path: "/course", element: <SingleCourse /> },
-    { path: "/profile", element: <UserProfile email={email} users={users} /> },
+    { path: "/course/:parameterName", element: <SingleCourse data={data} /> },
+    { path: "/profile", element: <UserProfile user={user}/> },
   ]);
 
   return (
