@@ -2,10 +2,14 @@ import React from "react";
 import "./AllCourses.css";
 import videoEditingPic from "../Images/video-editing.jpg";
 import sarasVideosPic from "../Images/saras-videos.png";
+import ImageCarousel from "../Dashboard/components/ImageCarousel";
+import { useState, useEffect } from "react";
 
-function AllCourses() {
+function AllCourses(email, users, conv, data, user, inProgress) {
+  
   return (
     <>
+    {inProgress.length > 0 ? (
       <div className="main">
         <div className="all-courses-left-section">
           <div className="all-courses-left">All Courses</div>
@@ -84,8 +88,12 @@ function AllCourses() {
               <img src={videoEditingPic}></img>
             </div>
           </div>
+          
+                  <ImageCarousel users={users} email={email} conv={conv} data={data} user={data} />
+
         </div>
-      </div>
+      </div>)
+      : null}
     </>
   );
 }

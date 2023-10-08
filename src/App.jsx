@@ -27,6 +27,7 @@ function App() {
   const [dummy, setDummy] = useState(false);
   const [email, setEmail] = useState('');
   const [aiArray, setAiArray] = useState([]);
+  const [inProgress, setInProgress] = useState([]);
 
   // grabb logged in user
   const [user, setUser] = useState(null);
@@ -35,6 +36,8 @@ function App() {
     users.map((user) => {
       if (localStorage.getItem("email") === user.email) {
         setUser(user);
+        setInProgress(user.inProgress);
+        console.log(user.inProgress)
         setPfp(`.${user.pfp}`);
       } else {
         return null;
@@ -84,9 +87,9 @@ function App() {
   // Define a variable to store the route elements
   const element = useRoutes([
     { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
-    { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} conv={conv}/> },
-    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data} user={user}/> },
-    { path: "/allcourses", element: <AllCourses /> },
+    { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} conv={conv} /> },
+    { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data} user={user} inProgress={inProgress}/> },
+    { path: "/allcourses", element: <AllCourses email={email} users={users} conv={conv} data={data} user={user} inProgress={inProgress}/> },
     { path: "/mycourses", element: <MyCourses /> },
     { path: "/course/:parameterName", element: <SingleCourse data={data} /> },
     { path: "/profile", element: <UserProfile user={user}/> },

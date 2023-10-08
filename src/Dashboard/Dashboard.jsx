@@ -7,12 +7,7 @@ import { courses } from "../data"; // Import the courses data
 import "./Dashboard.css";
 
 
-function Dashboard({email, users, conv, data, user}) {
-  const [inProgress, setInProgress] = useState([]);
-  useEffect(() => {
-    console.log(user.inProgress);
-    setInProgress(user.inProgress);
-  }, []);
+function Dashboard({email, users, conv, data, user, inProgress}) {
   return (
     <>
     {inProgress.length > 0 ? (

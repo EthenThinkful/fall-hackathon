@@ -30,8 +30,7 @@ function ImageCarousel({email, conv, data, user}) {
   //     setUser(users[0].completedCourses.title);
   //     handleSend();
   // }, []);
-  // end leave this comment!
-
+  // end leave this comment! 
   const renderSlides = user.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
@@ -53,7 +52,7 @@ function ImageCarousel({email, conv, data, user}) {
         </div>
       </Link>
     );
-  });
+  }) 
 
   return (
     <>
