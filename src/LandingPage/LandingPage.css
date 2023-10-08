@@ -17,7 +17,7 @@
   background-color: #344D56!important;
 }
 
-.logo-container {
+.skillverse-logo {
   align-self: flex-start; /* Align the logo to the top left */
   margin-left: 2rem; /* Adjust the margin as needed */
 }
@@ -75,11 +75,11 @@
   color: white;
   text-align: center;
   padding: 3rem 0;
-  bottom: 0;
   /* Ensure the footer remains at the bottom */
-  position: absolute;
   width: 100%;
   overflow: hidden;
+  position: fixed;
+  bottom: 0;
 }
 
 .text-overlay {

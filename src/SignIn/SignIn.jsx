@@ -24,7 +24,6 @@ function SignIn({state, setState, email, setEmail, users}) {
         }
         // leave this comment!
         e.preventDefault();
-        navigate('./dashboard');
     };
 
     return (
@@ -42,7 +41,7 @@ function SignIn({state, setState, email, setEmail, users}) {
                             <input
                                 type="email"
                                 id="email"
-                                placeholder="Email"
+                                placeholder="Enter 'ethenfm@gmail.com' to log in"
                                 className="email"
                                 style={{ textAlign: 'left' }}
                                 onChange={(e) => setVerify(e.target.value)}
@@ -53,7 +52,7 @@ function SignIn({state, setState, email, setEmail, users}) {
                             <input
                                 type="password"
                                 id="password"
-                                placeholder="Password"
+                                placeholder="No need for a password (x"
                                 className="password"
                                 style={{ textAlign: 'left' }}
                             />

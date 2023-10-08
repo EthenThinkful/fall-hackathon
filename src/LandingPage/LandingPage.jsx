@@ -20,9 +20,7 @@ const LandingPage = ({quote, setQuote, email, setEmail, users}) => {
         <> 
         <div>
             <div className='header' style={{backgroundColor: '#344D56', justifyContent: 'space-between'}}>
-                <h1 className='logo-container'>
                     <img src={require('../Images/logo-skillverse.png')} alt='Logo' className='skillverse-logo'/> 
-                </h1> 
                 <ActionButton setQuote={setQuote} state={state} setState={setState}/>
             </div>
             <div className="h3" style={{backgroundColor: '#344D56', margin:'0', paddingBottom: '1rem'}}>Learn on Your Own Time</div>
