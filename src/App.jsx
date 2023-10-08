@@ -26,6 +26,7 @@ function App() {
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   const [dummy, setDummy] = useState(false);
   const [email, setEmail] = useState('');
+  const [aiArray, setAiArray] = useState([]);
 
   // OpenAI API helper function
   function conv(x) {
@@ -37,7 +38,8 @@ function App() {
     const res = await runPromt(searchResults);
     console.log(res);
     const resTwo = conv(res);
-    console.log(resTwo);
+    setAiArray(resTwo);
+    console.log("resTwo: ", resTwo);
     const result = searchObjects(data, resTwo);
     console.log(searchObjects(data, resTwo));
     setAlgorithmResponse(result)
@@ -68,7 +70,7 @@ function App() {
   // Define a variable to store the route elements
   const element = useRoutes([
     { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
-    { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} algorithmResponse={algorithmResponse}/> },
+    { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} conv={conv}/> },
     { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data}/> },
     { path: "/allcourses", element: <AllCourses /> },
     { path: "/mycourses", element: <MyCourses /> },

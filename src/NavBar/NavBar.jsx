@@ -21,15 +21,15 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
     const handleChange = (e) => {
         e.preventDefault();
         setSearchResults(e.target.value);
-        console.log(searchResults) /// 
+        // console.log(searchResults)
     }
 
     // Submit Handler
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("pressed");
+        // console.log("pressed");
         setToBeSearched(searchResults);
-        handleSend();
+        // handleSend();
         navigate('../search');
     };
 

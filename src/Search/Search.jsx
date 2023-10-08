@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
-import NavBar from '../NavBar/NavBar';
-import CoursesList from '../Course/CoursesList';
+import React, { useState, useEffect } from 'react';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
 import { courses } from "../data"
-//import data here
+import SearchCarousel from './SearchCarousel';
+const data = require('../data'); // Import the courses data
 
 
-function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched}) {
+function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched, conv, algorithmResponse, aiArray}) {
 
   const [isOpen, setIsOpen] = useState(false);
-  console.log(searchResults.length);
+  // console.log(toBeSearched.length);
 
-  var firstCharacterInSearch = searchResults.charAt(0);
+  var firstCharacterInSearch = toBeSearched.charAt(0);
   var firstCharacterInSearchUpper = firstCharacterInSearch.toUpperCase();
-  var restOfCharactersSearch = searchResults.slice(1);
+  var restOfCharactersSearch = toBeSearched.slice(1);
   var newSearchWord = firstCharacterInSearchUpper.concat(restOfCharactersSearch)
-
+  //example toBeSearched = "python" newSearchWord = "Python"
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -32,46 +31,45 @@ function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched}
     navigate('../course');
 };
 
-
 // 1) Filter CATEGORIES 2) Filter LEVEL 
 // 3) Shufflle New array 4) MAP to div cards styles
 
 /// 1 Filter searchwords === course category (DONE)
-const filteredCategorizedCourses = courses.filter((course)=> {
-  return  course.category.toLowerCase() === searchResults.toLowerCase()
-})
+// const filteredCategorizedCourses = courses.filter((course)=> {
+//   return  course.category.toLowerCase() === searchResults.toLowerCase()
+// })
 
 ///2 Filter filter Course Level
 // a) Easy
-const filteredCatgoryandBeginnnerLevelCourses = filteredCategorizedCourses.filter((course)=>{
-  return course.level.toLowerCase() == "beginner"
-})
+// const filteredBeginnerCourses = filteredCategorizedCourses.filter((course)=>{
+//   return course.level.toLowerCase() == "beginner"
+// })
 // b) Intermediate
-const filteredCatgoryandIntermediateLevelCourses = filteredCategorizedCourses.filter((course)=>{
-  return course.level.toLowerCase() == "intermediate"
-})
+// const filteredIntermediateCourses = filteredCategorizedCourses.filter((course)=>{
+//   return course.level.toLowerCase() == "intermediate"
+// })
 // c) Any
-const filteredCatgoryAdvancedLevelCourses = filteredCategorizedCourses.filter((course)=>{
-  return course.level.toLowerCase() !== "beginner" && course.level.toLowerCase() !== "intermediate";
-})
+// const filteredAdvancedCourses = filteredCategorizedCourses.filter((course)=>{
+//   return course.level.toLowerCase() !== "beginner" && course.level.toLowerCase() !== "intermediate";
+// })
 
 ///3 Randomize indexes in new arrays
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
+// function shuffleArray(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+// }
 
 // 3a Beginner
-shuffleArray(filteredCatgoryandBeginnnerLevelCourses);
-var beginnerLoadedCategories = filteredCatgoryandBeginnnerLevelCourses.slice(0, 3);
+// shuffleArray(filteredBeginnerCourses);
+// var beginnerLoadedCategories = filteredBeginnerCourses.slice(0, 3);
 //3b Intermediate
-shuffleArray(filteredCatgoryandIntermediateLevelCourses);
-var intermeidateLoadedCategories = filteredCatgoryandIntermediateLevelCourses.slice(0,3);
+// shuffleArray(filteredIntermediateCourses);
+// var intermeidateLoadedCategories = filteredIntermediateCourses.slice(0,3);
 ///3c Any 
-shuffleArray(filteredCatgoryAdvancedLevelCourses)
-var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
+// shuffleArray(filteredAdvancedCourses)
+// var advancedLoadedCategories = filteredAdvancedCourses.slice(0,3);
 
 //4 Map it out 
 {/* <div key={index} className="carousel-slide">
@@ -81,8 +79,26 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
 
   return (
     <>
+    <div className='search-carousels'>
+    <div className='search-header'>{newSearchWord}</div>
+    <div className='search-results'>{data.length} results</div>
+    <button className="filter-btn">Filters</button>
+    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='search-carousel-container'>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    </div>
+    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='search-carousel-container'>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    </div>
+    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='search-carousel-container'>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    </div>
+    <div className='title-container'></div>
+    </div>
     {/* <NavBar searchResults={searchResults} setSearchResults={setSearchResults}/><button onClick={handleSearch}>Search</button> */}
-    {toBeSearched.length > 0 ? 
+    {/* {toBeSearched.length > 0 ? 
     <div>
         <br></br>
         <br></br>
@@ -103,8 +119,8 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
         <div className='result-data-container filter-button'>Filter</div>
         <br></br>
           <br></br>
-          {/* BEGINNERS */}
-          <div className='result-data-container'> Beginner {newSearchWord} Tutorials</div>
+
+          <div className='result-data-container'> Courses relating to {newSearchWord}</div>
         <div className='results-cards'>
           
           <div className="course-container">
@@ -121,7 +137,7 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
         <br></br>
         <br></br>
         <br></br>
-        {/* INTERMEDIATES */}
+
           <div className='result-data-container'> Intermediate {newSearchWord} Tutorials</div>
         <div className='results-cards'>
           <div className="course-container">
@@ -138,7 +154,7 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
         <br></br>
         <br></br>
         <br></br>
-        {/* ANY  */}
+
           <div className='result-data-container'> Advanced {newSearchWord} for Tutorials</div>
         <div className='results-cards'>
           <div className="course-container">
@@ -151,7 +167,7 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
             <button className='course-box'>HI</button>
           </div>
         </div>
-        <br></br>
+        <br></br> */}
         {/* <br></br>
       <div className='result-data-container'>
           <h3>More results for {newSearchWord}..</h3>
@@ -161,11 +177,11 @@ var advancedLoadedCategories = filteredCatgoryAdvancedLevelCourses.slice(0,3);
           Click here to take yourself to the page for this course
         </button>
       </div> */}
-      <br></br>
+      {/* <br></br>
       <br></br>
       <br></br>
     </div>
-: `ALL OF THE SEARCH RESULTS FOR ${toBeSearched.toUpperCase()} (EX)`}
+: `ALL OF THE SEARCH RESULTS FOR ${toBeSearched.toUpperCase()} (EX)`} */}
     </>
   );
 }
