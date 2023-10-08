@@ -12,7 +12,9 @@ function SingleCourse() {
             <div className='left-section'>
                 <div className='left-content'>
                     <div>
-                        <img src={require('../Images/arrow.jpg')} style={{marginBottom: '1rem'}}/>
+                        <a href='/mycourses'>
+                            <img src={require('../Images/arrow.jpg')} alt='arrow' style={{marginBottom: '1rem'}}/>
+                        </a>
                         <div style={{display: 'flex', flexDirection: 'column'}}>
                             <div className='cooking-title'>Traditional Italian Cooking</div>
                             <div className='author-title'>Jamie's Kitchen</div>
