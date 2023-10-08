@@ -75,7 +75,7 @@ function App() {
     { path: "/allcourses", element: <AllCourses /> },
     { path: "/mycourses", element: <MyCourses /> },
     { path: "/course", element: <SingleCourse /> },
-    { path: "/profile", element: <UserProfile /> },
+    { path: "/profile", element: <UserProfile email={email} users={users} /> },
   ]);
 
   return (
