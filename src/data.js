@@ -1038,7 +1038,7 @@ const courses = [
   image: "https://plus.unsplash.com/premium_photo-1663047713751-e2be16a680d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFzdGVyJTIwYWRvYmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
 },
 {
-  title: "Graphic Design for Marketing Professionals",
+  title: "Graphic Design for Marketing",
   category: "Graphic Design",
   level: "any",
   lessons: 10,

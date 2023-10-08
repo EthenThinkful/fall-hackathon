@@ -46,3 +46,19 @@ html {
 ::-webkit-scrollbar-corner {
   background-color: transparent; /* Set the color of the corners */
 }
+
+.loader {
+  margin: auto;
+  border: 10px solid #EAF0F6;
+  border-radius: 50%;
+  border-top: 10px solid #344D56;
+  width: 46px;
+  height: 46px;
+  animation: spinner 4s linear infinite;
+  margin-top: 2rem;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

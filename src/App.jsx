@@ -89,7 +89,7 @@ function App() {
     { path: "/", element: <LandingPage quote={quote} setQuote={setQuote} email={email} setEmail={setEmail} users={users}/> },
     { path: "/search", element: <Search searchResults={searchResults} toBeSearched={toBeSearched} conv={conv} /> },
     { path: "/dashboard", element: <Dashboard email={email} users={users} conv={conv} data={data} user={user} inProgress={inProgress}/> },
-    { path: "/allcourses", element: <AllCourses email={email} users={users} conv={conv} data={data} user={user} inProgress={inProgress}/> },
+    { path: "/allcourses", element: <AllCourses email={email} users={users} conv={conv} data={data} user={user} /> },
     { path: "/mycourses", element: <MyCourses /> },
     { path: "/course/:parameterName", element: <SingleCourse data={data} /> },
     { path: "/profile", element: <UserProfile user={user}/> },

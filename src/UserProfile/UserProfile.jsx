@@ -76,7 +76,7 @@ function UserProfile({ user }) {
                           justifyContent: "space-between",
                         }}
                       >
-                        {course.title} - {course.lessons} Lessons
+                        {course.title} 
                         <img src={dots} className="dot-menu" alt="Dots" />
                       </div>
                       <div

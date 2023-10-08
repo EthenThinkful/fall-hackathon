@@ -108,3 +108,7 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.bookmark {
+  margin-top: 2px;
+}
