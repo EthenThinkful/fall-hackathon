@@ -48,7 +48,7 @@ export const YearlyProgress = ({ className }) => {
         <Chart
           chartType="PieChart"
           width="100%" 
-          height="100%" 
+          height="400px" 
           data={data}
           options={options}
         />
