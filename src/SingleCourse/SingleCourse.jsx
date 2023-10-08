@@ -59,7 +59,7 @@ const navigate = useNavigate();
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div className="cooking-title">{currCourse.title}</div>
                 <div className="author-title">{currCourse.instructor}</div>
-                <img src={currCourse.image} />
+                <img src={currCourse.image} style={{width: '770px', height: '456px'}}/>
                 {/* begin like share section */}
                 <div className="row">
                   <div className="text">24,000 Likes</div>
