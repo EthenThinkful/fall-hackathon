@@ -55,7 +55,7 @@ export default function NavBar({searchResults, setSearchResults, toBeSearched, s
                     className='input' value={searchResults} />
                     {/* Need a small submit button in the input tag */}
                 </form>
-                <div>My Courses</div>
+                <Link to={'/mycourses'} className='link' style={{color:'white'}}><div> My Courses</div></Link>
                 <Link to={'/profile'} className='link'><img src={ethen} className='userPfp'/></Link>
             </div>
 

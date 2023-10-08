@@ -9,18 +9,18 @@ import { useState, useEffect } from "react";
 import users from "../users";
 import data from "../data";
 
-function AllCourses({email, conv, user}) {
-  const [inProgress, setInProgress] = useState([]);
-  useEffect(() => {
-    users.map((user) => {
-      if (localStorage.getItem("email") === user.email) {
-        setInProgress(user.inProgress);
-        console.log(user.inProgress)
-      } else {
-        return null;
-      }
-    });
-  }, []);
+function AllCourses({email, conv, inProgress}) {
+  // const [inProgress, setInProgress] = useState([]);
+  // useEffect(() => {
+  //   users.map((user) => {
+  //     if (localStorage.getItem("email") === user.email) {
+  //       setInProgress(user.inProgress);
+  //       console.log(user.inProgress)
+  //     } else {
+  //       return null;
+  //     }
+  //   });
+  // }, []);
 
   return (
     <>
@@ -111,7 +111,7 @@ function AllCourses({email, conv, user}) {
             <BecauseYouLikedCarousel users={users} email={email} user={data} />
             <div style={{ marginTop: '2rem'}}></div>
             <div style={{ marginTop: '2rem', textAlign: 'left' }}>Recommended for you (Generative AI)</div>
-            <RecommendedCarousel users={users} email={email} conv={conv} data={data} user={inProgress} />
+            <RecommendedCarousel user={inProgress} conv={conv} data={data} users={users} email={email} />
             <div style={{ marginTop: '4rem'}}></div>
           </div>
         </div>)

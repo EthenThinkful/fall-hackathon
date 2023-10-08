@@ -7,9 +7,23 @@ import { searchObjects } from "../OpenAi/Algorithm";
 import { runPromt } from "../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
 import bookmark from "../Images/icon-save.png";
+import users from "../users";
 
 
-function RecommendedCarousel({email, conv, data, user}) {
+function RecommendCarousel({email, conv, data, inProgress}) {
+    // const [user, setUser] = useState([]);
+    // useEffect(() => {
+    //     users.map((user) => {
+    //       if (localStorage.getItem("email") === user.email) {
+    //         setUser(user.inProgress);
+    //         console.log(user.inProgress)
+    //       } else {
+    //         return null;
+    //       }
+    //     });
+    //   }, []);
+
+
   // console.log(user);
   // const randomIndex = Math.floor(Math.random() * user.length);
   //   const randomValue = user[randomIndex];
@@ -22,8 +36,28 @@ function RecommendedCarousel({email, conv, data, user}) {
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   // OpenAI API call
   const handleSend = async () => {
-    const randomIndex = Math.floor(Math.random() * user.length);
-    const randomValue = user[randomIndex];
+    // Check if the user array is empty or undefined
+    if (!inProgress || inProgress.length === 0) {
+      console.error("User array is empty or undefined.");
+      return;
+    }
+  
+    const randomIndex = Math.floor(Math.random() * inProgress.length);
+    
+    // Check if randomIndex is within the valid range
+    if (randomIndex < 0 || randomIndex >= inProgress.length) {
+      console.error("Invalid random index.");
+      return;
+    }
+  
+    const randomValue = inProgress[randomIndex];
+  
+    // Check if randomValue is defined and has a 'title' property
+    if (!randomValue || !randomValue.title) {
+      console.error("Random value is undefined or has no 'title' property.");
+      return;
+    }
+  
     const wordsArray = randomValue.title.split(" ");
     const firstWord = wordsArray[0];
     const res = await runPromt(firstWord);
@@ -31,15 +65,17 @@ function RecommendedCarousel({email, conv, data, user}) {
     const resTwo = conv(res);
     console.log(resTwo);
     const result = searchObjects(data, resTwo);
-    console.log(searchObjects(data, resTwo));
-    setAlgorithmResponse(result)
+    console.log(result);
+    setAlgorithmResponse(result);
     return result;
   };
 
   // leave this comment!
-  // useEffect(() => {    
-  //     handleSend();
-  // }, []);
+//   useEffect(() => {
+//     console.log(inProgress)
+//     inProgress && inProgress.length > 0 &&    
+//       handleSend()
+//   }, []);
   // end leave this comment! 
 
   const renderSlides = algorithmResponse.map((course, index) => {
@@ -65,7 +101,7 @@ function RecommendedCarousel({email, conv, data, user}) {
   }) 
 
   return (
-    <>
+    <div className="search-carousel-container">
     {/* leave this comment */}
     {algorithmResponse.length > 0 ?
     <Carousel
@@ -75,7 +111,7 @@ function RecommendedCarousel({email, conv, data, user}) {
       infiniteLoop={true}
       autoPlay={false}
       centerMode={true}
-      centerSlidePercentage={50}
+      centerSlidePercentage={33.75}
       renderArrowPrev={(onClickHandler, hasPrev, label) =>
         hasPrev && (
           <button
@@ -122,8 +158,8 @@ function RecommendedCarousel({email, conv, data, user}) {
       {renderSlides}
     </Carousel>
      : <div className="loader"></div>} 
-    </>
+    </div>
   );
 }
 
-export default RecommendedCarousel;
+export default RecommendCarousel;

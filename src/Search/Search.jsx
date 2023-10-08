@@ -85,15 +85,15 @@ function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched,
     <button className="filter-btn">Filters</button>
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
     
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
  
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
 
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
 
     <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
 
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
 
     <div className='title-container'></div>
     </div>
