@@ -20,6 +20,13 @@ export function searchObjects(dataArray, searchWords) {
   });
 }
 
+export function searchObjectsByString(dataArray, searchString) {
+  return dataArray.filter((dataObj) => {
+    const dataString = JSON.stringify(dataObj).toLowerCase();
+    return dataString.includes(searchString.toLowerCase());
+  });
+}
+
   // export function searchObjectsTwo(dataArray, searchWords) {
   //   return dataArray.filter((dataObj) => {
   //     const dataString = JSON.stringify(dataObj);

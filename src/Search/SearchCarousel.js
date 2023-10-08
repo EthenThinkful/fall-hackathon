@@ -9,43 +9,23 @@ import { searchObjects } from "../OpenAi/Algorithm";
 import { runPromt } from "../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
 
-function SearchCarousel({ toBeSearched, conv, data }) {
+function SearchCarousel({ toBeSearched, conv, category }) {
     // incorporate AI first step here
     const [user, setUser] = useState("");
     const [aiObjects, setAiObjects] = useState([]);
     const [matchedObjects, setMatchedObjects] = useState([]);
 
     // OpenAI API call
-    const handleSend = async () => {
-        // console.log(toBeSearched);
-        const res = await runPromt(toBeSearched);
-        const resTwo = conv(res);
-        console.log(`Seach Carousel component array of words matching ${toBeSearched}:`, resTwo);
-        const result = searchObjects(data, resTwo);
-        console.log(result);
-        
-
-
-        setMatchedObjects(result);
-        // console.log("Seach Carousel component objects returned: ", searchObjects(data, resTwo));
-        // Filter objects based on whether any word from wordsToMatch is present in the 'text' property
-            // const filteredObjects = result.filter((obj) => {
-            //     for (const word of resTwo) {
-            //         console.log(obj.text.toLowerCase(), word.toLowerCase());
-            //         if (obj.text.toLowerCase().includes(word.toLowerCase())) {
-            //             return true; 
-            //         }
-            //     }
-            //     return false; 
-            // });
-            // Limit to the first 15 matched objects
-            // const limitedMatchedObjects = filteredObjects.slice(0, 15);
-            // console.log("Success Objects!: ", limitedMatchedObjects);
-            // setMatchedObjects(limitedMatchedObjects);
-        return result;
-    };
-
-
+    // const handleSend = async () => {
+    //     // console.log(toBeSearched);
+    //     const res = await runPromt(toBeSearched);
+    //     const resTwo = conv(res);
+    //     console.log(`Seach Carousel component array of words matching ${toBeSearched}:`, resTwo);
+    //     const result = searchObjects(data, resTwo);
+    //     console.log(result);
+    //     setMatchedObjects(result);
+    //     return result;
+    // };
 
     // leave this comment!
     // useEffect(() => {
@@ -53,7 +33,7 @@ function SearchCarousel({ toBeSearched, conv, data }) {
     // }, []);
     // end leave this comment!
 
-    const renderSlides = data.map((course, index) => {
+    const renderSlides = category.map((course, index) => {
         // Replace spaces with hyphens in the course title
         const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
 
@@ -75,9 +55,9 @@ function SearchCarousel({ toBeSearched, conv, data }) {
     });
 
     return (
+        <>
+        {category.length > 0 ? (
         <div className="search-carousel-container">
-            {/* leave this comment */}
-            {/* {matchedObjects.length > 0 ? */}
             <Carousel
                 showArrows={true}
                 showThumbs={false}
@@ -131,8 +111,9 @@ function SearchCarousel({ toBeSearched, conv, data }) {
             >
                 {renderSlides}
             </Carousel>
-             {/* : null}   */}
         </div>
+        ) : null}   
+        </>
     );
 }
 

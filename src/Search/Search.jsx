@@ -3,12 +3,16 @@ import './Search.css';
 import { useNavigate } from 'react-router-dom';
 import { courses } from "../data"
 import SearchCarousel from './SearchCarousel';
+import {searchObjectsByString} from '../OpenAi/Algorithm';
 const data = require('../data'); // Import the courses data
 
 
 function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched, conv, algorithmResponse, aiArray}) {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [category, setCategory] = useState([]);
+  const [beginner, setBeginner] = useState([]);
+  const [notBeginner, setNotBeginner] = useState([]);
   // console.log(toBeSearched.length);
 
   var firstCharacterInSearch = toBeSearched.charAt(0);
@@ -34,12 +38,30 @@ function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched,
 // 1) Filter CATEGORIES 2) Filter LEVEL 
 // 3) Shufflle New array 4) MAP to div cards styles
 
-/// 1 Filter searchwords === course category (DONE)
-// const filteredCategorizedCourses = courses.filter((course)=> {
-//   return  course.category.toLowerCase() === searchResults.toLowerCase()
-// })
+//  1 Filter searchwords === course category (DONE)
+useEffect(() => {
+  const categorizedCourses = searchObjectsByString(data, toBeSearched);
+  const shuffledData = [...categorizedCourses];
+  for (let i = shuffledData.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+  }
+  setCategory(shuffledData);
+  console.log(categorizedCourses);
+  // console.log("All levels in categorizedCourses:", categorizedCourses.map(course => course.level));
+  const filteredBeginnerCourses = categorizedCourses.filter((course) => {
+    return course.level.toLowerCase() === "beginner";
+  });
+  setBeginner(filteredBeginnerCourses);
+  console.log("beginners courses: ", filteredBeginnerCourses);
+  const filteredNotBeginnerCourses = categorizedCourses.filter((course) => {
+    return course.level.toLowerCase() !== "beginner";
+  });
+  setNotBeginner(filteredNotBeginnerCourses);
+  console.log("Everything except beginners courses: ", filteredNotBeginnerCourses);
+}, [toBeSearched]);
 
-///2 Filter filter Course Level
+// 2 Filter filter Course Level
 // a) Easy
 // const filteredBeginnerCourses = filteredCategorizedCourses.filter((course)=>{
 //   return course.level.toLowerCase() == "beginner"
@@ -79,109 +101,26 @@ function Search({searchResults, setSearchResults, toBeSearched, setToBeSearched,
 
   return (
     <>
+    {category.length > 0 ? (
     <div className='search-carousels'>
     <div className='search-header'>{newSearchWord}</div>
-    <div className='search-results'>{data.length} results</div>
+    <div className='search-results'>{category.length} results</div>
     <button className="filter-btn">Filters</button>
-    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='title-container'>All Courses relating to {newSearchWord}</div>
     
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} category={category}/>
  
-    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='title-container'>{newSearchWord} for beginners</div>
 
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} category={beginner}/>
 
-    <div className='title-container'>Novice Courses relating to {newSearchWord}</div>
+    <div className='title-container'>Intermediate and advanced {newSearchWord}</div>
 
-    <SearchCarousel toBeSearched={toBeSearched} conv={conv} data={data}/>
+    <SearchCarousel toBeSearched={toBeSearched} conv={conv} category={notBeginner}/>
 
     <div className='title-container'></div>
-    </div>
-    {/* <NavBar searchResults={searchResults} setSearchResults={setSearchResults}/><button onClick={handleSearch}>Search</button> */}
-    {/* {toBeSearched.length > 0 ? 
-    <div>
-        <br></br>
-        <br></br>
-          <div>
-            {beginnerLoadedCategories.map((course)=>{
-              return    <div className="course-container">
-              <button className='course-box'>{course.title}</button>
-            </div>
-            })}
-          </div>
-        <br></br>
-        <br></br>
-          <div className='search-title result-data-container'>{newSearchWord}</div>
-          <div className='result-data-container'>456 results</div>
-          <br></br>
-          <br></br>
-          <br></br>
-        <div className='result-data-container filter-button'>Filter</div>
-        <br></br>
-          <br></br>
-
-          <div className='result-data-container'> Courses relating to {newSearchWord}</div>
-        <div className='results-cards'>
-          
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
-          <div className='result-data-container'> Intermediate {newSearchWord} Tutorials</div>
-        <div className='results-cards'>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
-          <div className='result-data-container'> Advanced {newSearchWord} for Tutorials</div>
-        <div className='results-cards'>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-          <div className="course-container">
-            <button className='course-box'>HI</button>
-          </div>
-        </div>
-        <br></br> */}
-        {/* <br></br>
-      <div className='result-data-container'>
-          <h3>More results for {newSearchWord}..</h3>
-        </div>
-          <div className="course-container">
-          <button className='course-box' onClick={handleSubmit}>
-          Click here to take yourself to the page for this course
-        </button>
-      </div> */}
-      {/* <br></br>
-      <br></br>
-      <br></br>
-    </div>
-: `ALL OF THE SEARCH RESULTS FOR ${toBeSearched.toUpperCase()} (EX)`} */}
+    </div>       
+) : null}
     </>
   );
 }
