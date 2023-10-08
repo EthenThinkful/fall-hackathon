@@ -19,12 +19,7 @@
 
 .logo-container {
   align-self: flex-start; /* Align the logo to the top left */
-  margin: 1rem; /* Adjust the margin as needed */
-}
-
-.skillverse-logo {
-  width: 247px;
-  height: 64px;
+  margin-left: 2rem; /* Adjust the margin as needed */
 }
 
 .h3 {
