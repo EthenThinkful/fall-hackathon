@@ -12,7 +12,7 @@ function InProgressCarousel({ inProgress }) {
 
         return (
             <Link
-                to={`/courses/${hyphenatedTitle}`}
+                to={`/course/${hyphenatedTitle}`}
                 key={index}
                 className="carousel-slide-link"
             >

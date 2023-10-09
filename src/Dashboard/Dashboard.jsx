@@ -3,12 +3,24 @@ import { YearlyProgress } from "./components/YearlyProgress";
 import { MonthlyProgress } from "./components/MonthlyProgress";
 import { MyBadges } from "./components/MyBadges";
 import ImageCarousel from "./components/ImageCarousel"; // Import the ImageCarousel component
+import BecauseYouLikedCarousel from "../AllCourses/BecauseYouLikedCarousel";
 import { courses } from "../data"; // Import the courses data
 import "./Dashboard.css";
 
 
 function Dashboard({email, users, conv, data, user, inProgress}) {
+  const shuffledData = [...data];
+  for (let i = shuffledData.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+  }
+  const shuffledDataTwo = [...data];
+  for (let i = shuffledData.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+  }
   return (
+    
     <>
     {inProgress.length > 0 ? (
     <div className="body">
@@ -36,9 +48,9 @@ function Dashboard({email, users, conv, data, user, inProgress}) {
           </h3>
           <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
           <h3>Popular Right Now</h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={shuffledData}/>
           <h3>Discover</h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={shuffledDataTwo}/>
         </div>
       </div>
     </div>

@@ -9,35 +9,24 @@ import { useState, useEffect } from "react";
 import bookmark from "../Images/icon-save.png";
 
 
-function BecauseYouLikedCarousel({email, conv, data, user}) {
-  // incorporate AI first step here
-  // const [user, setUser] = useState("");
-  const [algorithmResponse, setAlgorithmResponse] = useState([]);
-  // OpenAI API call
-  const handleSend = async () => {
-    const res = await runPromt(user);
-    console.log(res);
-    const resTwo = conv(res);
-    console.log(resTwo);
-    const result = searchObjects(data, resTwo);
-    console.log(searchObjects(data, resTwo));
-    setAlgorithmResponse(result)
-    return result;
-  };
+export default function BecauseYouLikedCarousel({email, data, users, user}) {
 
-  // leave this comment!
-  // useEffect(() => {
-  //     setUser(users[0].completedCourses.title);
-  //     handleSend();
-  // }, []);
-  // end leave this comment! 
+const [BecauseYouLiked, setBecauseYouLiked] = useState([]);
 
-// Filter searchwords === course category 
-const filteredCategorizedCourses = user.filter((course)=> {
-  return  course.category.toLowerCase() === "cooking";
-})
+// function getRandomCourses() {
+//   console.log(data[0].category.toLowerCase());
+//   console.log(randomUserCourse[0].category.toLowerCase());
+//   return data.filter((course)=>  course.category.toLowerCase() === randomUserCourse[0].category.toLowerCase());
+// }
 
-  const renderSlides = filteredCategorizedCourses.map((course, index) => {
+// get random course
+// useEffect(() => {
+// const randomizedCourses = getRandomCourses();
+// console.log(randomizedCourses);
+// setBecauseYouLiked(randomizedCourses);
+// }, [])
+
+  const renderSlides = data.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
     return (
@@ -120,5 +109,3 @@ const filteredCategorizedCourses = user.filter((course)=> {
     </>
   );
 }
-
-export default BecauseYouLikedCarousel;

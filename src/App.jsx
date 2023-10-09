@@ -27,16 +27,17 @@ function App() {
   const [dummy, setDummy] = useState(false);
   const [email, setEmail] = useState('');
   const [aiArray, setAiArray] = useState([]);
-  const [inProgress, setInProgress] = useState([]);
 
   // grabb logged in user
   const [user, setUser] = useState(null);
   const [pfp, setPfp] = useState(null);
+  const [inProgress, setInProgress] = useState([]);
+
   useEffect(() => {
     users.map((user) => {
       if (localStorage.getItem("email") === user.email) {
         setUser(user);
-        setInProgress(user.inProgress);
+        setInProgress(user.inProgress)
         console.log(user.inProgress)
         setPfp(`.${user.pfp}`);
       } else {

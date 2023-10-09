@@ -36,11 +36,11 @@ function RecommendedCarousel({email, conv, data, user}) {
     return result;
   };
 
-  // leave this comment!
+  // Expensive API Call!
   // useEffect(() => {    
   //     handleSend();
   // }, []);
-  // end leave this comment! 
+  // end Expensive API Call! 
 
   const renderSlides = algorithmResponse.map((course, index) => {
     // Replace spaces with hyphens in the course title

@@ -11,19 +11,6 @@ import users from "../users";
 
 
 function RecommendCarousel({email, conv, data, inProgress}) {
-    // const [user, setUser] = useState([]);
-    // useEffect(() => {
-    //     users.map((user) => {
-    //       if (localStorage.getItem("email") === user.email) {
-    //         setUser(user.inProgress);
-    //         console.log(user.inProgress)
-    //       } else {
-    //         return null;
-    //       }
-    //     });
-    //   }, []);
-
-
   // console.log(user);
   // const randomIndex = Math.floor(Math.random() * user.length);
   //   const randomValue = user[randomIndex];
@@ -70,13 +57,13 @@ function RecommendCarousel({email, conv, data, inProgress}) {
     return result;
   };
 
-  // leave this comment!
-//   useEffect(() => {
-//     console.log(inProgress)
-//     inProgress && inProgress.length > 0 &&    
-//       handleSend()
-//   }, []);
-  // end leave this comment! 
+  // Expensive API Call!
+  // useEffect(() => {
+  //   console.log(inProgress)
+  //   inProgress && inProgress.length > 0 &&    
+  //     handleSend()
+  // }, []);
+  // end Expensive API Call! 
 
   const renderSlides = algorithmResponse.map((course, index) => {
     // Replace spaces with hyphens in the course title

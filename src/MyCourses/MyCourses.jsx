@@ -8,17 +8,6 @@ import users from "../users";
 import data from "../data";
 
 function MyCourses({email, conv, user, inProgress}) {
-  // const [inProgress, setInProgress] = useState([]);
-  // useEffect(() => {
-  //   users.map((user) => {
-  //     if (localStorage.getItem("email") === user.email) {
-  //       setInProgress(user.inProgress);
-  //       console.log(user.inProgress)
-  //     } else {
-  //       return null;
-  //     }
-  //   });
-  // }, []);
   return (
     <>
     <div className='search-carousels'>

@@ -47,18 +47,18 @@ useEffect(() => {
     [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
   }
   setCategory(shuffledData);
-  console.log(categorizedCourses);
+  // console.log(categorizedCourses);
   // console.log("All levels in categorizedCourses:", categorizedCourses.map(course => course.level));
   const filteredBeginnerCourses = categorizedCourses.filter((course) => {
     return course.level.toLowerCase() === "beginner";
   });
   setBeginner(filteredBeginnerCourses);
-  console.log("beginners courses: ", filteredBeginnerCourses);
+  // console.log("beginners courses: ", filteredBeginnerCourses);
   const filteredNotBeginnerCourses = categorizedCourses.filter((course) => {
     return course.level.toLowerCase() !== "beginner";
   });
   setNotBeginner(filteredNotBeginnerCourses);
-  console.log("Everything except beginners courses: ", filteredNotBeginnerCourses);
+  // console.log("Everything except beginners courses: ", filteredNotBeginnerCourses);
 }, [toBeSearched]);
 
 // 2 Filter filter Course Level
