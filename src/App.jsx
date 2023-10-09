@@ -48,20 +48,8 @@ function App() {
 
   // OpenAI API helper function
   function conv(x) {
+    // extracts and returns an array of words that are within single quotes of a string
     return x.match(/'([^']+)'/g)?.map(match => match.slice(1, -1)) || [];
-  }
-
-  // OpenAI API call
-  const handleSend = async () => {
-    const res = await runPromt(searchResults);
-    console.log(res);
-    const resTwo = conv(res);
-    setAiArray(resTwo);
-    console.log("resTwo: ", resTwo);
-    const result = searchObjects(data, resTwo);
-    console.log(searchObjects(data, resTwo));
-    setAlgorithmResponse(result)
-    return result;
   }
 
   // Define a variable to store the current path
@@ -77,7 +65,6 @@ function App() {
           setSearchResults={setSearchResults}
           toBeSearched={toBeSearched}
           setToBeSearched={setToBeSearched}
-          handleSend={handleSend}
         />
       );
     }

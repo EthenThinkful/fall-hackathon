@@ -104,7 +104,7 @@ function AllCourses({ email, conv, inProgress, user, data }) {
             <BecauseYouLikedCarousel users={users} email={email} data={cookingCourses} user={inProgress} />
             <div style={{ marginTop: '2rem' }}></div>
             <div style={{ marginTop: '2rem', textAlign: 'left' }}>Recommended for you (Generative AI)</div>
-            <RecommendedCarousel user={inProgress} conv={conv} data={data} users={users} email={email} />
+            <RecommendedCarousel inProgress={inProgress} conv={conv} data={data} users={users} email={email} user={user}/>
             <div style={{ marginTop: '4rem' }}></div>
           </div>
         </div>)

@@ -6,8 +6,6 @@ import linkedinPng from "../Images/linkedin.png";
 import facebookPng from "../Images/facebook.png";
 import googlePng from "../Images/google.png";
 
-// Defines the landing page of the application
-
 function SignIn({state, setState, email, setEmail, users}) {
     const [verify, setVerify] = useState("");
 
@@ -28,9 +26,6 @@ function SignIn({state, setState, email, setEmail, users}) {
 
     return (
         <>
-            {/* <div style={{ textAlign: 'left', paddingLeft: '2rem' }}>
-                <h1>Skillverse</h1>
-            </div> */}
             <div className="text-overlay">
                 <div className="sign-in-container">
                     <div style={{ textAlign: 'left', paddingBotton: '0rem', marginBottom: '3rem' }}>
@@ -52,7 +47,7 @@ function SignIn({state, setState, email, setEmail, users}) {
                             <input
                                 type="password"
                                 id="password"
-                                placeholder="No need for a password (x"
+                                placeholder="No need for a password!"
                                 className="password"
                                 style={{ textAlign: 'left' }}
                             />

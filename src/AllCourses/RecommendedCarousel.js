@@ -9,29 +9,23 @@ import { useState, useEffect } from "react";
 import bookmark from "../Images/icon-save.png";
 
 
-function RecommendedCarousel({email, conv, data, user}) {
-  // console.log(user);
-  // const randomIndex = Math.floor(Math.random() * user.length);
-  //   const randomValue = user[randomIndex];
-  //   console.log(randomValue);
-  //   const wordsArray = randomValue.title.split(" ");
-  //   console.log(wordsArray);
-  //   const firstWord = wordsArray[0];
-  //   console.log(firstWord);
-  // incorporate AI first step here
+function RecommendedCarousel({email, conv, data, user, inProgress}) {
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   // OpenAI API call
   const handleSend = async () => {
-    const randomIndex = Math.floor(Math.random() * user.length);
-    const randomValue = user[randomIndex];
+    const randomIndex = Math.floor(Math.random() * user.allCourses.length);
+    const randomValue = user.allCourses[randomIndex];
+    console.log("Random Course from allCourses: ", randomValue);
     const wordsArray = randomValue.title.split(" ");
     const firstWord = wordsArray[0];
+    console.log("Random course's title's first word: ", firstWord);
     const res = await runPromt(firstWord);
-    console.log(res);
+    console.log("String of words (not official array): ", res);
     const resTwo = conv(res);
-    console.log(resTwo);
+    console.log("String of words after being converted to safe array: ", resTwo);
+    // here are the recommended courses for a user after processing of API call & business logic
     const result = searchObjects(data, resTwo);
-    console.log(searchObjects(data, resTwo));
+    console.log("Recommended courses for a user: ", searchObjects(data, resTwo));
     setAlgorithmResponse(result)
     return result;
   };
