@@ -8,6 +8,7 @@ import dots from "../../Images/3-buttons.png";
 import { searchObjects } from "../../OpenAi/Algorithm";
 import { runPromt } from "../../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
+import bookmark from "../../Images/icon-save.png";
 
 function ImageCarousel({email, conv, data, user}) {
   // incorporate AI first step here
@@ -46,7 +47,7 @@ function ImageCarousel({email, conv, data, user}) {
           {/* Ethen adding code */}
           <div className="carousel-desc-duo">
           <p className="carousel-title"><strong>{course.title}</strong></p><img src={dots} alt="dots" className="dot-menuu"/>
-          <p className="carousel-instructor" style={{fontWeight: "700"}}><strong>{course.instructor}</strong></p>
+          <p className="carousel-instructor" style={{fontWeight: "700"}}><strong>{course.instructor}</strong></p><img src={bookmark} alt="dots" className="bookmark"/>
           </div>
           {/* Ethen end adding code */}
         </div>

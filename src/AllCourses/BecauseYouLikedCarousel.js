@@ -13,19 +13,6 @@ export default function BecauseYouLikedCarousel({email, data, users, user}) {
 
 const [BecauseYouLiked, setBecauseYouLiked] = useState([]);
 
-// function getRandomCourses() {
-//   console.log(data[0].category.toLowerCase());
-//   console.log(randomUserCourse[0].category.toLowerCase());
-//   return data.filter((course)=>  course.category.toLowerCase() === randomUserCourse[0].category.toLowerCase());
-// }
-
-// get random course
-// useEffect(() => {
-// const randomizedCourses = getRandomCourses();
-// console.log(randomizedCourses);
-// setBecauseYouLiked(randomizedCourses);
-// }, [])
-
   const renderSlides = data.map((course, index) => {
     // Replace spaces with hyphens in the course title
     const hyphenatedTitle = course.title.replace(/\s+/g, "-").toLowerCase();
@@ -37,12 +24,10 @@ const [BecauseYouLiked, setBecauseYouLiked] = useState([]);
       >
         <div className="carousel-slide">
           <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
-          {/* Ethen adding code */}
           <div className="carousel-desc-duo">
           <p className="carousel-title"><strong>{course.title}</strong></p><img src={dots} alt="dots" className="dot-menuu"/>
           <p className="carousel-instructor" style={{fontWeight: "700"}}><strong>{course.instructor}</strong></p><img src={bookmark} alt="bookmark" className="bookmark" />
           </div>
-          {/* Ethen end adding code */}
         </div>
       </Link>
     );
@@ -51,7 +36,7 @@ const [BecauseYouLiked, setBecauseYouLiked] = useState([]);
   return (
     <>
     {/* leave this comment */}
-    {/* {algorithmResponse.length > 0 ? */}
+    {data.length > 0 ?
     <Carousel
       showArrows={true}
       showThumbs={false}
@@ -105,7 +90,7 @@ const [BecauseYouLiked, setBecauseYouLiked] = useState([]);
     >
       {renderSlides}
     </Carousel>
-     {/* : null}  */}
+      : null}  
     </>
   );
 }

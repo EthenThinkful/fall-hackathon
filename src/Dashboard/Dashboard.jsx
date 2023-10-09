@@ -19,10 +19,16 @@ function Dashboard({email, users, conv, data, user, inProgress}) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
   }
+
+const [languageCourses, setLanguageCourses] = useState([]);
+useEffect(() => {
+  const languageCourses = data.filter((course) => course.category === "language");
+  setLanguageCourses(languageCourses);
+},[]);
+
   return (
-    
     <>
-    {inProgress.length > 0 ? (
+    {languageCourses.length > 0 ? (
     <div className="body">
       <div className="dashboard-metrics-container">
         <MonthlyProgress className="monthly-progress" />
@@ -46,12 +52,13 @@ function Dashboard({email, users, conv, data, user, inProgress}) {
             Because You Liked&nbsp;
             <em>{user.completedCourses[0].title}</em>
           </h3>
-          <ImageCarousel users={users} email={email} conv={conv} data={data} user={data}/>
+          <ImageCarousel users={users} email={email} conv={conv} data={data} user={languageCourses}/>
           <h3>Popular Right Now</h3>
           <ImageCarousel users={users} email={email} conv={conv} data={data} user={shuffledData}/>
           <h3>Discover</h3>
           <ImageCarousel users={users} email={email} conv={conv} data={data} user={shuffledDataTwo}/>
         </div>
+        <div style={{marginTop: '4rem'}}></div>
       </div>
     </div>
     ): null}

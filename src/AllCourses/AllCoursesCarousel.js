@@ -10,29 +10,6 @@ import bookmark from "../Images/icon-save.png";
 
 
 function AllCoursesCarousel({email, conv, data, user}) {
-  // incorporate AI first step here
-  // const [user, setUser] = useState("");
-  const [algorithmResponse, setAlgorithmResponse] = useState([]);
-  // OpenAI API call
-  const handleSend = async () => {
-    const res = await runPromt(user);
-    console.log(res);
-    const resTwo = conv(res);
-    console.log(resTwo);
-    const result = searchObjects(data, resTwo);
-    console.log(searchObjects(data, resTwo));
-    setAlgorithmResponse(result)
-    return result;
-  };
-
-  // leave this comment!
-  // useEffect(() => {
-  //     setUser(users[0].completedCourses.title);
-  //     handleSend();
-  // }, []);
-  // end leave this comment! 
-
-// c) Any
 const filteredAdvancedCourses = user.filter((course)=>{
   return course.level.toLowerCase() !== "beginner" && course.level.toLowerCase() !== "intermediate";
 })

@@ -163,7 +163,7 @@ const courses = [
     image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3VpdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
   },
   {
-    title: "Piano Masterclass: Advanced Techniques",
+    title: "Advanced Piano Techniques",
     category: "music",
     level: "advanced",
     lessons: 30,
@@ -463,7 +463,7 @@ const courses = [
 },
 
 {
-  title: "Mobile App Development Crash Course",
+  title: "Mobile App Dev Crash Course",
   category: "programming",
   level: "any",
   lessons: 8,

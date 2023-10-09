@@ -9,23 +9,15 @@ import { useState, useEffect } from "react";
 import users from "../users";
 import data from "../data";
 
-function AllCourses({ email, conv, inProgress, user }) {
-  const [randomUserCourse, setRandomUserCourse] = useState([]);
-
-  function randomIndex() {
-    const randomIndex = Math.floor(Math.random() * user.allCourses.length);
-    return user.allCourses[randomIndex];
-  }
-
-  useEffect(() => {
-    const randoIndex = randomIndex();
-    console.log("randomIndexed Course from users allCourses: ", randoIndex)
-    setRandomUserCourse(randoIndex);
+function AllCourses({ email, conv, inProgress, user, data }) {
+  const [cookingCourses, setCookingCourses] = useState([]);
+  useEffect(() => { 
+    const cookingCourses = data.filter((course) => course.category === "cooking");
+    setCookingCourses(cookingCourses);
   }, [])
-
   return (
     <>
-      {inProgress.length > 0 ? (
+      {cookingCourses.length > 0 ? (
         <div className="main">
           <div className="all-courses-left-section">
             <div className="all-courses-left">All Courses</div>
@@ -109,7 +101,7 @@ function AllCourses({ email, conv, inProgress, user }) {
             <AllCoursesCarousel users={users} email={email} user={data} />
             <div style={{ marginTop: '2rem' }}></div>
             <div style={{ marginTop: '2rem', textAlign: 'left' }}>Because You Follow Cooking</div>
-            <BecauseYouLikedCarousel users={users} email={email} data={data} user={inProgress} />
+            <BecauseYouLikedCarousel users={users} email={email} data={cookingCourses} user={inProgress} />
             <div style={{ marginTop: '2rem' }}></div>
             <div style={{ marginTop: '2rem', textAlign: 'left' }}>Recommended for you (Generative AI)</div>
             <RecommendedCarousel user={inProgress} conv={conv} data={data} users={users} email={email} />
