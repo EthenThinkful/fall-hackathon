@@ -1,6 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  apiKey: "",
+  apiKey: "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", // exclude when pushing to github
 });
 const openai = new OpenAIApi(configuration);
 

@@ -3,11 +3,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import dots from "../Images/3-buttons.png";
-import { searchObjects } from "../OpenAi/Algorithm";
-import { runPromt } from "../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
 import bookmark from "../Images/icon-save.png";
-
 
 function AllCoursesCarousel({email, conv, data, user}) {
 const filteredAdvancedCourses = user.filter((course)=>{

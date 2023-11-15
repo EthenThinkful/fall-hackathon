@@ -44,12 +44,10 @@ function ImageCarousel({email, conv, data, user}) {
       >
         <div className="carousel-slide">
           <img src={course.image} alt={`Image ${index + 1}`} className="carousel-image" />
-          {/* Ethen adding code */}
           <div className="carousel-desc-duo">
           <p className="carousel-title"><strong>{course.title}</strong></p><img src={dots} alt="dots" className="dot-menuu"/>
           <p className="carousel-instructor" style={{fontWeight: "700"}}><strong>{course.instructor}</strong></p><img src={bookmark} alt="dots" className="bookmark"/>
           </div>
-          {/* Ethen end adding code */}
         </div>
       </Link>
     );

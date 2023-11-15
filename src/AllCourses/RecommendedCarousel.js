@@ -8,7 +8,6 @@ import { runPromt } from "../OpenAi/OpenAi";
 import { useState, useEffect } from "react";
 import bookmark from "../Images/icon-save.png";
 
-
 function RecommendedCarousel({email, conv, data, user, inProgress}) {
   const [algorithmResponse, setAlgorithmResponse] = useState([]);
   // OpenAI API call
